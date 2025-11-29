@@ -5,46 +5,94 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Projects | Portfolio Showcase</title>
+    <title>Nexspire Solutions | Project Demos</title>
+    <meta name="description" content="Explore Nexspire Solutions project demos and showcases">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <i class="fa-solid fa-code brand-icon"></i>
+                <span class="brand-text">Nexspire Solutions</span>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fa-solid fa-sun sun-icon"></i>
+                <i class="fa-solid fa-moon moon-icon"></i>
             </button>
-            <h1>My Projects</h1>
-            <p class="subtitle">A collection of my latest work, experiments, and open source contributions.</p>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Project Showcase</span>
+                </div>
+                <h1 class="hero-title">
+                    Explore Our
+                    <span class="gradient-text"> Demo Projects</span>
+                </h1>
+                <p class="hero-description">
+                    A curated collection of web development projects showcasing modern design,
+                    interactive experiences, and clean code architecture.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <i class="fa-solid fa-folder-open stat-icon"></i>
+                        <div class="stat-value" id="project-count">0</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-code-branch stat-icon"></i>
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Responsive</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-rocket stat-icon"></i>
+                        <div class="stat-value">Live</div>
+                        <div class="stat-label">Demos</div>
+                    </div>
+                </div>
+            </div>
         </header>
 
+        <!-- Projects Section -->
         <main id="app">
-            <!-- Projects will be injected here -->
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Click on any project to explore the live demo</p>
+            </div>
             <div class="projects-grid" id="projects-grid"></div>
         </main>
-
-        <footer>
-            <p>&copy; 2024 My Portfolio. Built with Vite & &hearts;</p>
-        </footer>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <i class="fa-solid fa-code brand-icon"></i>
+                <p>Building the future, one project at a time.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2025</span> Nexspire Solutions.</p>
+        </div>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
 </body>
 
