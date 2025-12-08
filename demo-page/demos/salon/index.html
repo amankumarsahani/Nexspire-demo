@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Salon - Beauty & Style</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="gradient-bg"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><i class="fa-solid fa-scissors"></i><span>Glamour</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#team">Team</a></li>
+            </ul>
+            <button class="btn-booking" onclick="showBookingModal()"><i class="fa-solid fa-calendar"></i><span>Book
+                    Now</span></button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down"><i class="fa-solid fa-crown"></i><span>Premium Beauty
+                    Salon</span></div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">Where <span
+                    class="gradient-text">Beauty</span><br>Meets Artistry</h1>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="400">Transform your look with our expert
+                stylists and premium beauty services</p>
+            <button class="btn-primary" data-aos="fade-up" data-aos-delay="600" onclick="showBookingModal()"><span>Book
+                    Appointment</span><i class="fa-solid fa-sparkles"></i></button>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label">Our Services</span>
+            <h2 class="section-title">Premium Beauty Services</h2>
+            <p class="section-subtitle">Indulge in luxury treatments</p>
+        </div>
+        <div class="services-grid" id="servicesGrid"></div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label">Gallery</span>
+            <h2 class="section-title">Our Work</h2>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <section class="team" id="team">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label">Our Team</span>
+            <h2 class="section-title">Expert Stylists</h2>
+        </div>
+        <div class="team-grid" id="teamGrid"></div>
+    </section>
+
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeBookingModal()"><i class="fa-solid fa-times"></i></button>
+            <div class="modal-header">
+                <h2>Book Appointment</h2>
+                <p>Reserve your beauty session</p>
+            </div>
+            <form class="booking-form" onsubmit="handleBooking(event)">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone" required>
+                <select required>
+                    <option value="">Select Service</option>
+                    <option>Haircut & Styling</option>
+                    <option>Hair Coloring</option>
+                    <option>Manicure</option>
+                    <option>Makeup</option>
+                </select>
+                <input type="date" required>
+                <input type="time" required>
+                <button type="submit" class="btn-primary btn-full"><span>Confirm Booking</span><i
+                        class="fa-solid fa-check"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

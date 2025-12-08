@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity Spa - Wellness & Harmony</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Zen Background Effects -->
+    <div class="zen-bg"></div>
+    <div class="petals-container" id="petals"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-spa"></i>
+                <span>Serenity</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Sanctuary</a></li>
+                <li><a href="#treatments">Rituals</a></li>
+                <li><a href="#packages">Journeys</a></li>
+                <li><a href="#contact">Reserve</a></li>
+            </ul>
+            <button class="btn-book" onclick="showBookingModal()">
+                <span>Book Treatment</span>
+                <i class="fa-solid fa-lotus"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Luxury Wellness Sanctuary</span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                Find Your <span class="gradient-text">Inner Peace</span>
+            </h1>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                Embark on a journey of relaxation and renewal in our tranquil haven of calmness and serenity.
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                <button class="btn-primary" onclick="showBookingModal()">
+                    <span>Begin Journey</span>
+                </button>
+                <button class="btn-secondary"
+                    onclick="document.getElementById('treatments').scrollIntoView({behavior: 'smooth'})">
+                    <span>Explore Rituals</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatments Section -->
+    <section class="treatments" id="treatments">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label">Our Rituals</span>
+            <h2 class="section-title">Healing Treatments</h2>
+            <p class="section-subtitle">Ancient wisdom meets modern wellness</p>
+        </div>
+        <div class="treatments-grid" id="treatmentsGrid"></div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages" id="packages">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label">Wellness Journeys</span>
+            <h2 class="section-title">Curated Packages</h2>
+        </div>
+        <div class="packages-grid" id="packagesGrid"></div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeBookingModal()">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fa-solid fa-spa"></i>
+                <h2>Reserve Your Sanctuary</h2>
+                <p>Begin your path to relaxation</p>
+            </div>
+            <form class="booking-form" onsubmit="handleBooking(event)">
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-row">
+                    <select required>
+                        <option value="">Select Treatment</option>
+                        <option>Signature Massage</option>
+                        <option>Facial Rejuvenation</option>
+                        <option>Body Wrap</option>
+                        <option>Wellness Package</option>
+                    </select>
+                    <input type="date" required>
+                </div>
+                <div class="form-row">
+                    <input type="time" required>
+                    <select>
+                        <option value="">Therapist Preference (Optional)</option>
+                        <option>Any Expert Therapist</option>
+                        <option>Female Therapist</option>
+                        <option>Male Therapist</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary btn-full">
+                    <span>Confirm Reservation</span>
+                    <i class="fa-solid fa-check"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Calm Audio Toggle -->
+    <button class="audio-toggle" id="audioToggle" onclick="toggleAudio()" title="Toggle Ambience">
+        <i class="fa-solid fa-volume-off"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

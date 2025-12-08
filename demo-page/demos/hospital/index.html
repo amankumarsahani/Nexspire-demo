@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Hospital - Advanced Healthcare Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Medical Gradient Background -->
+    <div class="medical-bg"></div>
+
+    <!-- Heartbeat Line Animation -->
+    <div class="heartbeat-line">
+        <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path class="heartbeat-path" d="M0,50 L200,50 L220,20 L240,80 L260,50 L1000,50" />
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>MediCare</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="emergency-btn" id="emergencyBtn">
+                <i class="fa-solid fa-phone"></i>
+                <span>Emergency</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">
+                <i class="fa-solid fa-shield-heart"></i>
+                <span>Trusted Healthcare Since 1995</span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                Your Health, <span class="gradient-text">Our Priority</span>
+            </h1>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                Experience world-class medical care with cutting-edge technology and compassionate professionals
+                dedicated to your wellbeing.
+            </p>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="stat-number" data-count="10000">0</div>
+                    <div class="stat-label">Patients Treated</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Expert Doctors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="stat-number" data-count="24">0</div>
+                    <div class="stat-label">Hours Service</div>
+                </div>
+            </div>
+            <button class="btn-primary" data-aos="fade-up" data-aos-delay="800" onclick="showAppointmentModal()">
+                <span>Book Appointment</span>
+                <i class="fa-solid fa-calendar-check"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label">Our Services</span>
+            <h2 class="section-title">Comprehensive Healthcare</h2>
+            <p class="section-subtitle">Advanced medical services tailored to your needs</p>
+        </div>
+
+        <div class="services-grid" id="servicesGrid"></div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors" id="doctors">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label">Our Team</span>
+            <h2 class="section-title">Expert Doctors</h2>
+            <p class="section-subtitle">Meet our highly qualified medical professionals</p>
+        </div>
+
+        <div class="doctors-grid" id="doctorsGrid"></div>
+    </section>
+
+    <!-- Appointment Modal -->
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeAppointmentModal()">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fa-solid fa-calendar-check"></i>
+                <h2>Book Appointment</h2>
+                <p>Schedule your visit with our expert doctors</p>
+            </div>
+            <form class="appointment-form" onsubmit="handleAppointment(event)">
+                <div class="form-row">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" placeholder="Phone" required>
+                    <select required>
+                        <option value="">Select Department</option>
+                        <option>Cardiology</option>
+                        <option>Pediatrics</option>
+                        <option>Orthopedics</option>
+                        <option>Neurology</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <input type="date" required>
+                    <input type="time" required>
+                </div>
+                <textarea placeholder="Message (optional)" rows="4"></textarea>
+                <button type="submit" class="btn-primary btn-full">
+                    <span>Confirm Appointment</span>
+                    <i class="fa-solid fa-check"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Emergency Button -->
+    <button class="floating-emergency" onclick="callEmergency()">
+        <i class="fa-solid fa-phone-volume"></i>
+        <span>911</span>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

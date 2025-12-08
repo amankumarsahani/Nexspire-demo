@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWellyy - Luxury Jewelry Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Particle System -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Glassmorphic Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-gem"></i>
+                <span>JWellyy</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-btn" id="cartBtn">
+                <i class="fa-solid fa-shopping-bag"></i>
+                <span>Cart</span>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">
+                <i class="fa-solid fa-sparkles"></i>
+                <span>Luxury Collection 2024</span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                Timeless <span class="gradient-text">Elegance</span><br>
+                Crafted in Gold
+            </h1>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                Discover our exquisite collection of handcrafted jewelry, where every piece tells a story of luxury and
+                sophistication.
+            </p>
+            <button class="btn-primary" data-aos="fade-up" data-aos-delay="600">
+                <span>Explore Collection</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="collections">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label">Our Collections</span>
+            <h2 class="section-title">Exquisite Jewelry</h2>
+            <p class="section-subtitle">Handpicked selection of our finest pieces</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons" data-aos="fade-up" data-aos-delay="200">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="rings">Rings</button>
+            <button class="filter-btn" data-category="necklaces">Necklaces</button>
+            <button class="filter-btn" data-category="bracelets">Bracelets</button>
+            <button class="filter-btn" data-category="earrings">Earrings</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-shopping-bag"></i> Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            <button class="btn-primary btn-full">
+                <span>Checkout</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
