@@ -577,30 +577,162 @@ textarea:focus {
     animation: pulse 2s infinite
 }
 
-@media (max-width:968px) {
+/* Responsive - Tablet */
+@media (max-width: 968px) {
     .nav-links {
-        display: none
+        display: none;
     }
 
     .hero-title {
-        font-size: 3rem
+        font-size: 3rem;
     }
 
     .hero-stats {
         grid-template-columns: 1fr;
-        gap: 1.5rem
+        gap: 1.5rem;
     }
 
     .section-title {
-        font-size: 2.5rem
+        font-size: 2.5rem;
     }
 
     .services-grid,
     .doctors-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 
     .form-row {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem;
+    }
+
+    .emergency-btn {
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .emergency-btn span {
+        display: none;
+    }
+
+    .hero {
+        padding: 6rem 1rem 3rem;
+        min-height: auto;
+    }
+
+    .hero-badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+    }
+
+    .btn-primary {
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    .services,
+    .doctors {
+        padding: 4rem 1rem;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .section-label {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.75rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .doctor-image {
+        height: 250px;
+    }
+
+    .doctor-info {
+        padding: 1.25rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        border-radius: 20px;
+    }
+
+    .modal-header {
+        padding: 2rem 1.5rem 1rem;
+    }
+
+    .modal-header i {
+        font-size: 2rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .appointment-form {
+        padding: 0 1.5rem 2rem;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .floating-emergency {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1rem;
     }
 }

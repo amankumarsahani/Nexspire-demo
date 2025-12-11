@@ -734,7 +734,7 @@ h4 {
     color: var(--white);
 }
 
-/* Responsive */
+/* Responsive - Tablet */
 @media (max-width: 968px) {
     .nav-links {
         display: none;
@@ -749,8 +749,9 @@ h4 {
     }
 
     .products-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
     }
 
     .modal-body {
@@ -758,10 +759,155 @@ h4 {
     }
 
     .modal-image {
-        min-height: 350px;
+        min-height: 300px;
     }
 
     .cart-sidebar {
         width: 100%;
+        right: -100%;
+    }
+
+    .filter-buttons {
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+
+    .filter-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem;
+    }
+
+    .cart-btn {
+        padding: 0.65rem 1rem;
+    }
+
+    .cart-btn span {
+        display: none;
+    }
+
+    .hero {
+        padding: 6rem 1rem 3rem;
+        min-height: auto;
+    }
+
+    .hero-badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .btn-primary {
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    .collections {
+        padding: 4rem 1rem;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .section-label {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.75rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .filter-buttons {
+        margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+    .product-info {
+        padding: 1.5rem;
+    }
+
+    .product-name {
+        font-size: 1.4rem;
+    }
+
+    .product-price {
+        font-size: 1.6rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        border-radius: 20px;
+    }
+
+    .modal-image {
+        min-height: 250px;
+    }
+
+    .modal-details {
+        padding: 2rem 1.5rem;
+    }
+
+    .modal-details h2 {
+        font-size: 2rem;
+    }
+
+    .cart-header {
+        padding: 1.5rem;
+    }
+
+    .cart-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .cart-footer {
+        padding: 1.5rem;
+    }
+
+    .cart-total {
+        font-size: 1.2rem;
     }
 }
