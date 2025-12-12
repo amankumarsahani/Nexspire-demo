@@ -1,143 +1,121 @@
-// ===== Data =====
+// Serenity Spa Data
 const treatments = [
-    { icon: '💆', title: 'Signature Massage', desc: 'Our signature full-body massage combining Swedish and deep tissue techniques', duration: '90 min', price: '$149' },
-    { icon: '🌸', title: 'Aromatherapy', desc: 'Therapeutic massage with essential oils for deep relaxation', duration: '60 min', price: '$99' },
-    { icon: '🔥', title: 'Hot Stone Therapy', desc: 'Warm volcanic stones melt away tension and stress', duration: '75 min', price: '$129' },
-    { icon: '✨', title: 'Facial Rejuvenation', desc: 'Luxurious facial with organic products for radiant skin', duration: '60 min', price: '$119' },
-    { icon: '🍃', title: 'Body Wrap', desc: 'Detoxifying wrap with natural herbs and minerals', duration: '90 min', price: '$159' },
-    { icon: '🧘', title: 'Meditation Session', desc: 'Guided meditation for mental clarity and inner peace', duration: '45 min', price: '$59' }
+    { icon: '💆', title: 'Signature Massage', desc: 'Our signature full-body massage combining Swedish and deep tissue techniques for complete relaxation.', duration: '90 min', price: '$149' },
+    { icon: '🔥', title: 'Hot Stone Therapy', desc: 'Warm volcanic stones placed on key points to melt away tension and restore energy flow.', duration: '75 min', price: '$129' },
+    { icon: '🌸', title: 'Aromatherapy', desc: 'Therapeutic massage with custom-blended essential oils for deep relaxation and healing.', duration: '60 min', price: '$99' },
+    { icon: '✨', title: 'Facial Rejuvenation', desc: 'Luxurious facial treatment with organic products for radiant, glowing skin.', duration: '60 min', price: '$119' },
+    { icon: '🍃', title: 'Body Wrap', desc: 'Detoxifying wrap with natural herbs and minerals to purify and nourish your skin.', duration: '90 min', price: '$159' },
+    { icon: '🧘', title: 'Meditation Session', desc: 'Guided meditation for mental clarity, stress relief, and inner peace.', duration: '45 min', price: '$59' }
 ];
 
 const packages = [
-    { title: 'Day of Bliss', price: '$299', image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=500&q=80', featured: false, features: ['90-min Signature Massage', 'Facial Rejuvenation', 'Aromatherapy Bath', 'Herbal Tea Service'] },
-    { title: 'Ultimate Retreat', price: '$449', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbec66?w=500&q=80', featured: true, badge: 'Most Popular', features: ['Hot Stone Therapy', 'Body Wrap Treatment', 'Facial Rejuvenation', 'Gourmet Lunch', 'Pool Access'] },
-    { title: 'Couples Escape', price: '$549', image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&q=80', featured: false, features: ['Couples Massage', 'Private Suite', 'Champagne & Chocolates', 'Aromatherapy', 'Sunset Views'] }
+    { title: 'Day of Bliss', price: '$299', featured: false, image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80', features: ['90-min Signature Massage', 'Facial Rejuvenation', 'Aromatherapy Bath', 'Herbal Tea Service'] },
+    { title: 'Ultimate Retreat', price: '$449', featured: true, badge: 'Most Popular', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbec66?w=600&q=80', features: ['Hot Stone Therapy', 'Body Wrap', 'Facial Rejuvenation', 'Gourmet Lunch', 'Pool Access'] },
+    { title: 'Couples Escape', price: '$549', featured: false, image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80', features: ['Couples Massage', 'Private Suite', 'Champagne & Chocolate', 'Aromatherapy', 'Sunset Views'] }
 ];
 
-// ===== DOM Elements =====
-const treatmentsGrid = document.getElementById('treatmentsGrid');
-const packagesGrid = document.getElementById('packagesGrid');
-const bookingModal = document.getElementById('bookingModal');
+const classes = [
+    { title: 'Morning Yoga', time: '7:00 AM - 8:00 AM', instructor: 'Maya Singh', icon: 'fa-spa' },
+    { title: 'Meditation', time: '9:00 AM - 10:00 AM', instructor: 'Dr. James Wilson', icon: 'fa-om' },
+    { title: 'Power Yoga', time: '6:00 PM - 7:00 PM', instructor: 'Sarah Martinez', icon: 'fa-dumbbell' },
+    { title: 'Tai Chi', time: '8:00 AM - 9:00 AM', instructor: 'Master Chen', icon: 'fa-yin-yang' },
+    { title: 'Breathwork', time: '5:00 PM - 6:00 PM', instructor: 'Emma Thompson', icon: 'fa-wind' },
+    { title: 'Restorative Yoga', time: '7:00 PM - 8:00 PM', instructor: 'Lisa Anderson', icon: 'fa-leaf' }
+];
 
-// ===== Render Functions =====
+const testimonials = [
+    { quote: 'An absolutely transformative experience. The moment I walked in, all my stress melted away. The therapists are incredibly skilled and attentive. This is my sanctuary.', author: 'Sarah Mitchell, Wellness Enthusiast' },
+    { quote: 'I have visited spas around the world, and Serenity stands out for its authentic approach to wellness. The attention to detail is remarkable.', author: 'David Chen, Travel Writer' },
+    { quote: 'The perfect escape from city life. Every treatment feels like a journey, and the staff truly cares about your wellbeing.', author: 'Jennifer Woods, Yoga Instructor' }
+];
+
+// Render Functions
 function renderTreatments() {
-    treatmentsGrid.innerHTML = treatments.map((treatment, i) => `
-        <div class="treatment-card" style="animation: fadeIn 0.6s ease ${i * 0.1}s backwards">
-            <div class="treatment-icon">${treatment.icon}</div>
-            <h3>${treatment.title}</h3>
-            <p>${treatment.desc}</p>
+    const timeline = document.getElementById('treatmentsTimeline');
+    timeline.innerHTML = treatments.map((t, i) => `
+        <div class="treatment-card" style="animation: fadeInUp 0.5s ease ${i * 0.1}s both">
+            <div class="treatment-icon">${t.icon}</div>
+            <h3>${t.title}</h3>
+            <p>${t.desc}</p>
             <div class="treatment-meta">
-                <span><i class="far fa-clock"></i> ${treatment.duration}</span>
-                <span><i class="fas fa-tag"></i> ${treatment.price}</span>
+                <span><i class="far fa-clock"></i> ${t.duration}</span>
+                <span>${t.price}</span>
             </div>
         </div>
     `).join('');
 }
 
 function renderPackages() {
-    packagesGrid.innerHTML = packages.map((pkg, i) => `
-        <div class="package-card ${pkg.featured ? 'featured' : ''}" style="animation: fadeIn 0.6s ease ${i * 0.15}s backwards">
-            <div class="package-image">
-                <img src="${pkg.image}" alt="${pkg.title}" loading="lazy">
-                ${pkg.badge ? `<span class="package-badge">${pkg.badge}</span>` : ''}
+    const grid = document.getElementById('packagesGrid');
+    grid.innerHTML = packages.map((p, i) => `
+        <div class="package-card ${p.featured ? 'featured' : ''}" style="animation: fadeInUp 0.6s ease ${i * 0.15}s both">
+            <div class="package-img">
+                <img src="${p.image}" alt="${p.title}" loading="lazy">
+                ${p.badge ? `<span class="package-badge">${p.badge}</span>` : ''}
             </div>
             <div class="package-content">
-                <h3 class="package-title">${pkg.title}</h3>
-                <div class="package-price">${pkg.price}</div>
+                <h3 class="package-title">${p.title}</h3>
+                <div class="package-price">${p.price}</div>
                 <ul class="package-features">
-                    ${pkg.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
+                    ${p.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
                 </ul>
-                <button class="btn btn-primary btn-full" onclick="openBookingModal()">Book Now</button>
+                <button class="btn btn-primary btn-full" onclick="openModal()">Book Now</button>
             </div>
         </div>
     `).join('');
 }
 
-// ===== Modal Functions =====
-function openBookingModal() {
-    bookingModal.classList.add('active');
+function renderClasses() {
+    const grid = document.getElementById('classesGrid');
+    grid.innerHTML = classes.map((c, i) => `
+        <div class="class-card" style="animation: fadeInUp 0.5s ease ${i * 0.1}s both">
+            <div class="class-icon"><i class="fas ${c.icon}"></i></div>
+            <h3>${c.title}</h3>
+            <div class="class-time">${c.time}</div>
+            <div class="class-instructor">with ${c.instructor}</div>
+        </div>
+    `).join('');
+}
+
+function renderTestimonial() {
+    const randomIndex = Math.floor(Math.random() * testimonials.length);
+    const t = testimonials[randomIndex];
+    document.getElementById('testimonialQuote').textContent = t.quote;
+    document.getElementById('testimonialAuthor').textContent = `— ${t.author}`;
+}
+
+// Modal Functions
+function openModal() {
+    document.getElementById('bookingModal').classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
-function closeBookingModal() {
-    bookingModal.classList.remove('active');
+function closeModal() {
+    document.getElementById('bookingModal').classList.remove('active');
     document.body.style.overflow = '';
 }
 
-bookingModal.addEventListener('click', (e) => {
-    if (e.target === bookingModal) closeBookingModal();
-});
-
-// ===== Form Handler =====
 function handleBooking(e) {
     e.preventDefault();
-    showNotification('Your wellness journey awaits! We\'ll confirm your reservation shortly.');
-    closeBookingModal();
+    alert('Your wellness journey awaits! We\'ll confirm your reservation shortly.');
+    closeModal();
     e.target.reset();
 }
 
-// ===== Notification =====
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 24px;
-        padding: 20px 32px;
-        background: linear-gradient(135deg, #7D8F69 0%, #A8B89C 100%);
-        color: white;
-        border-radius: 12px;
-        font-weight: 600;
-        font-size: 15px;
-        z-index: 3000;
-        animation: slideIn 0.5s ease, slideOut 0.5s ease 3.5s forwards;
-        box-shadow: 0 15px 40px rgba(125, 143, 105, 0.35);
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        max-width: 400px;
-    `;
-    notification.innerHTML = `<i class="fas fa-check-circle" style="font-size: 20px;"></i>${message}`;
-    document.body.appendChild(notification);
-    setTimeout(() => notification.remove(), 4000);
-}
-
-// Add animation styles
+// Animation Styles
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-    @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 `;
 document.head.appendChild(style);
 
-// ===== Smooth Scroll =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
-
-// ===== Navbar Scroll Effect =====
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(249, 247, 244, 0.98)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
-        navbar.style.padding = '16px 0';
-    } else {
-        navbar.style.background = 'rgba(249, 247, 244, 0.9)';
-        navbar.style.boxShadow = 'none';
-        navbar.style.padding = '20px 0';
-    }
-});
-
-// ===== Initialize =====
+// Initialize
 renderTreatments();
 renderPackages();
+renderClasses();
+renderTestimonial();
 
-console.log('🌿 Serenity Spa loaded successfully!');
+console.log('🍃 Serenity Spa loaded!');

@@ -4,177 +4,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serenity Spa - Wellness & Harmony</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Serenity - Wellness Spa Retreat</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Zen Background -->
-    <div class="zen-bg">
-        <div class="zen-circles">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
-        </div>
-    </div>
-
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
+    <nav class="nav">
+        <div class="nav-inner">
             <a href="#" class="logo">
-                <span class="logo-icon">🌿</span>
-                <span>Serenity</span>
+                <span class="logo-leaf">🍃</span>
+                <span class="logo-name">Serenity</span>
             </a>
-            <div class="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#treatments" class="nav-link">Treatments</a>
-                <a href="#packages" class="nav-link">Packages</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <button class="btn btn-primary" onclick="openBookingModal()">
-                Book Treatment
-            </button>
-            <button class="mobile-menu-btn"><span></span><span></span><span></span></button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#treatments">Treatments</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#classes">Classes</a></li>
+            </ul>
+            <button class="nav-btn" onclick="openModal()">Reserve</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero with Parallax -->
     <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">Wellness & Harmony</span>
+            <h1 class="hero-title">
+                Find Your<br>
+                <span class="text-accent">Inner Peace</span>
+            </h1>
+            <p class="hero-desc">Escape the ordinary. Embrace serenity. Our sanctuary awaits to restore your mind, body,
+                and soul through ancient healing traditions.</p>
+            <button class="btn btn-light" onclick="openModal()">
+                <span>Begin Your Journey</span>
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy">
         <div class="container">
-            <div class="hero-content">
-                <span class="hero-eyebrow">Luxury Wellness Retreat</span>
-                <h1 class="hero-title">
-                    Find Your<br>
-                    <span class="text-sage">Inner Peace</span>
-                </h1>
-                <p class="hero-desc">Escape the ordinary and embark on a journey of relaxation and renewal. Our
-                    sanctuary awaits to restore your mind, body, and soul.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary btn-lg" onclick="openBookingModal()">
-                        Begin Your Journey
-                    </button>
-                    <a href="#treatments" class="btn btn-outline btn-lg">
-                        Explore Treatments
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-image-main">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Spa Treatment">
-                </div>
-                <div class="hero-stats-card">
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Years Experience</span>
+            <div class="philosophy-grid">
+                <div class="philosophy-text">
+                    <span class="section-tag">Our Philosophy</span>
+                    <h2>Ancient Wisdom,<br>Modern Wellness</h2>
+                    <p>We blend traditional healing practices with contemporary techniques to create a transformative
+                        experience for every guest.</p>
+                    <div class="philosophy-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>Organic Products</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <span>Expert Therapists</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-spa"></i>
+                            <span>Holistic Approach</span>
+                        </div>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Treatments</span>
-                    </div>
+                </div>
+                <div class="philosophy-image">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Spa">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Treatments Section -->
+    <!-- Treatments Timeline -->
     <section class="treatments" id="treatments">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">Our Rituals</span>
-                <h2 class="section-title">Healing <span class="text-sage">Treatments</span></h2>
-                <p class="section-desc">Ancient wisdom meets modern wellness</p>
+                <span class="section-tag">Healing Rituals</span>
+                <h2 class="section-title">Our Treatments</h2>
             </div>
-            <div class="treatments-grid" id="treatmentsGrid"></div>
+            <div class="treatments-timeline" id="treatmentsTimeline"></div>
         </div>
     </section>
 
-    <!-- Packages Section -->
+    <!-- Packages -->
     <section class="packages" id="packages">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">Wellness Journeys</span>
-                <h2 class="section-title">Curated <span class="text-sage">Packages</span></h2>
-                <p class="section-desc">Complete experiences for ultimate relaxation</p>
+                <span class="section-tag">Wellness Journeys</span>
+                <h2 class="section-title">Spa Packages</h2>
             </div>
             <div class="packages-grid" id="packagesGrid"></div>
         </div>
     </section>
 
-    <!-- Testimonial Section -->
+    <!-- Classes Schedule -->
+    <section class="classes" id="classes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Daily Wellness</span>
+                <h2 class="section-title">Yoga & Meditation</h2>
+            </div>
+            <div class="classes-grid" id="classesGrid"></div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
     <section class="testimonial">
+        <div class="testimonial-bg"></div>
         <div class="container">
             <div class="testimonial-content">
                 <i class="fas fa-quote-left"></i>
-                <blockquote>
-                    "An absolutely transformative experience. The moment I walked in, all my stress melted away. The
-                    therapists are incredibly skilled and attentive. This is my sanctuary."
-                </blockquote>
-                <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Sarah">
-                    <div>
-                        <strong>Sarah Mitchell</strong>
-                        <span>Wellness Enthusiast</span>
-                    </div>
-                </div>
+                <blockquote id="testimonialQuote"></blockquote>
+                <div class="testimonial-author" id="testimonialAuthor"></div>
             </div>
         </div>
     </section>
 
     <!-- Booking Modal -->
     <div class="modal" id="bookingModal">
+        <div class="modal-bg" onclick="closeModal()"></div>
         <div class="modal-content">
-            <button class="modal-close" onclick="closeBookingModal()"><i class="fas fa-times"></i></button>
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
             <div class="modal-header">
-                <span class="modal-icon">🌿</span>
-                <h2>Reserve Your <span class="text-sage">Sanctuary</span></h2>
+                <span class="logo-leaf">🍃</span>
+                <h3>Reserve Your Sanctuary</h3>
                 <p>Begin your path to relaxation</p>
             </div>
-            <form class="booking-form" onsubmit="handleBooking(event)">
+            <form class="modal-form" onsubmit="handleBooking(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select Treatment</option>
+                    <option>Signature Massage</option>
+                    <option>Hot Stone Therapy</option>
+                    <option>Aromatherapy</option>
+                    <option>Facial Rejuvenation</option>
+                    <option>Body Wrap</option>
+                </select>
                 <div class="form-row">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="your@email.com" required>
-                    </div>
+                    <input type="date" required>
+                    <input type="time" required>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Treatment</label>
-                        <select required>
-                            <option value="">Select treatment</option>
-                            <option>Signature Massage</option>
-                            <option>Aromatherapy</option>
-                            <option>Hot Stone Therapy</option>
-                            <option>Facial Rejuvenation</option>
-                            <option>Body Wrap</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone</label>
-                        <input type="tel" placeholder="+1 234 567 890" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Preferred Date</label>
-                        <input type="date" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Preferred Time</label>
-                        <input type="time" required>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full btn-lg">
-                    Confirm Reservation
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Confirm Reservation</span>
                 </button>
             </form>
         </div>
@@ -183,39 +164,26 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-main">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <span class="logo-icon">🌿</span>
-                        <span>Serenity</span>
+                        <span class="logo-leaf">🍃</span>
+                        <span class="logo-name">Serenity</span>
                     </a>
-                    <p>A sanctuary for mind, body, and soul. Experience true wellness in our peaceful retreat.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
+                    <p>A sanctuary for mind, body, and soul.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
-                    <a href="#">About Us</a>
                     <a href="#">Treatments</a>
-                    <a href="#">Gift Cards</a>
-                    <a href="#">Careers</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Treatments</h4>
-                    <a href="#">Massage</a>
-                    <a href="#">Facials</a>
-                    <a href="#">Body Wraps</a>
                     <a href="#">Packages</a>
+                    <a href="#">Classes</a>
+                    <a href="#">Gift Cards</a>
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 789 Wellness Ave, CA 90210</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 321-9876</p>
-                    <p><i class="fas fa-envelope"></i> namaste@serenity.com</p>
-                    <p><i class="fas fa-clock"></i> Daily 9:00 AM - 9:00 PM</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 789 Wellness Way, CA 90210</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 987-6543</p>
+                    <p><i class="fas fa-clock"></i> Daily 9AM - 9PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
