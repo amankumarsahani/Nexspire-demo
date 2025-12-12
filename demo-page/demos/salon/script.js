@@ -5,7 +5,9 @@ const services = [
     { icon: '💄', title: 'Bridal Makeup', desc: 'Flawless bridal looks for your special day', price: 'From $250' },
     { icon: '💅', title: 'Manicure & Pedicure', desc: 'Luxurious nail care with premium products', price: 'From $35' },
     { icon: '🧖', title: 'Facial Treatment', desc: 'Rejuvenating facials for radiant, glowing skin', price: 'From $85' },
-    { icon: '💆', title: 'Massage Therapy', desc: 'Relaxing massages to melt away stress', price: 'From $75' }
+    { icon: '💆', title: 'Massage Therapy', desc: 'Relaxing massages to melt away stress', price: 'From $75' },
+    { icon: '💇', title: 'Hair Extensions', desc: 'Premium quality extensions for length and volume', price: 'From $350' },
+    { icon: '✨', title: 'Keratin Treatment', desc: 'Smoothing treatment for frizz-free, silky hair', price: 'From $200' }
 ];
 
 const gallery = [
@@ -16,20 +18,38 @@ const gallery = [
     'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400&q=80',
     'https://images.unsplash.com/photo-1522335108757-6eee8f2fdb41?w=400&q=80',
     'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&q=80',
-    'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&q=80'
+    'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&q=80',
+    'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80',
+    'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80',
+    'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=80',
+    'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80'
 ];
 
 const team = [
-    { name: 'Sophie Martinez', role: 'Creative Director', image: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80' },
-    { name: 'Emma Thompson', role: 'Senior Stylist', image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80' },
-    { name: 'Mia Rodriguez', role: 'Color Specialist', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
-    { name: 'Olivia Chen', role: 'Makeup Artist', image: 'https://images.unsplash.com/photo-1598550880863-4e8aa3d0edb4?w=400&q=80' }
+    { name: 'Sophie Martinez', role: 'Creative Director', image: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80', specialty: 'Color Specialist' },
+    { name: 'Emma Thompson', role: 'Senior Stylist', image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80', specialty: 'Bridal Hair' },
+    { name: 'Mia Rodriguez', role: 'Color Specialist', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80', specialty: 'Balayage Expert' },
+    { name: 'Olivia Chen', role: 'Makeup Artist', image: 'https://images.unsplash.com/photo-1598550880863-4e8aa3d0edb4?w=400&q=80', specialty: 'Bridal Makeup' },
+    { name: 'Isabella Rose', role: 'Nail Technician', image: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80', specialty: 'Nail Art' },
+    { name: 'Ava Daniels', role: 'Hair Stylist', image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80', specialty: 'Extensions' }
+];
+
+const reviews = [
+    { name: 'Sarah K.', rating: 5, text: 'Amazing experience! Sophie gave me the best haircut I\'ve ever had. The salon is beautiful and everyone is so friendly.', service: 'Haircut & Color' },
+    { name: 'Jessica M.', rating: 5, text: 'Emma did my bridal makeup and I felt like a princess! She\'s incredibly talented and made my day perfect.', service: 'Bridal Makeup' },
+    { name: 'Rachel P.', rating: 5, text: 'Mia is a color genius! My balayage looks absolutely stunning. I get compliments everywhere I go!', service: 'Hair Coloring' },
+    { name: 'Amanda L.', rating: 5, text: 'The manicure and pedicure was so relaxing. Isabella did beautiful nail art and the products they use are top quality!', service: 'Manicure & Pedicure' },
+    { name: 'Nicole T.', rating: 5, text: 'Best salon in town! Clean, modern, and the staff really knows what they\'re doing. Highly recommend!', service: 'Facial Treatment' },
+    { name: 'Michelle D.', rating: 5, text: 'The keratin treatment transformed my hair! It\'s so smooth and shiny now. Worth every penny!', service: 'Keratin Treatment' },
+    { name: 'Lauren W.', rating: 5, text: 'Ava did my hair extensions and they look so natural! I couldn\'t be happier with the result.', service: 'Hair Extensions' },
+    { name: 'Emily R.', rating: 5, text: 'This salon is a hidden gem! Professional, welcoming atmosphere and amazing results every time.', service: 'Hair Styling' }
 ];
 
 // ===== DOM Elements =====
 const servicesGrid = document.getElementById('servicesGrid');
 const galleryGrid = document.getElementById('galleryGrid');
 const teamGrid = document.getElementById('teamGrid');
+const reviewsGrid = document.getElementById('reviewsGrid');
 const bookingModal = document.getElementById('bookingModal');
 
 // ===== Render Functions =====
@@ -68,7 +88,30 @@ function renderTeam() {
             <div class="team-info">
                 <h3>${member.name}</h3>
                 <div class="team-role">${member.role}</div>
+                <div class="team-specialty"><i class="fas fa-star"></i> ${member.specialty}</div>
             </div>
+        </div>
+    `).join('');
+}
+
+// ===== Render Reviews =====
+function renderReviews() {
+    if (!reviewsGrid) return;
+    reviewsGrid.innerHTML = reviews.map((review, i) => `
+        <div class="review-card" style="animation: fadeIn 0.6s ease ${i * 0.1}s backwards">
+            <div class="review-header">
+                <div class="review-author">
+                    <div class="author-avatar">${review.name.charAt(0)}</div>
+                    <div>
+                        <h4>${review.name}</h4>
+                        <div class="review-service">${review.service}</div>
+                    </div>
+                </div>
+                <div class="review-rating">
+                    ${'<i class="fas fa-star"></i>'.repeat(review.rating)}
+                </div>
+            </div>
+            <p class="review-text">${review.text}</p>
         </div>
     `).join('');
 }
@@ -157,5 +200,6 @@ window.addEventListener('scroll', () => {
 renderServices();
 renderGallery();
 renderTeam();
+renderReviews();
 
 console.log('💄 Glamour Salon loaded successfully!');

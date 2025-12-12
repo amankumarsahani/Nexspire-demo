@@ -586,6 +586,146 @@ body {
 .doctor-exp {
     color: var(--gray-400);
     font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.doctor-education {
+    color: var(--gray-600);
+    font-size: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.doctor-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 12px;
+    color: #FFB800;
+}
+
+.doctor-rating span {
+    color: var(--dark);
+    font-weight: 700;
+    margin-left: 6px;
+}
+
+/* ===== Departments ===== */
+.departments {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.department-card {
+    padding: 40px 30px;
+    background: var(--gray-100);
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.department-card:hover {
+    background: var(--white);
+    border-color: var(--primary-light);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.dept-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--primary);
+}
+
+.department-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.department-card p {
+    color: var(--gray-600);
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.dept-beds {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===== Facilities ===== */
+.facilities {
+    padding: 100px 0;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.facility-card {
+    position: relative;
+    height: 300px;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.facility-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.facility-card:hover img {
+    transform: scale(1.1);
+}
+
+.facility-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 102, 255, 0.9), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.facility-card:hover .facility-overlay {
+    opacity: 1;
+}
+
+.facility-overlay h4 {
+    color: var(--white);
+    font-size: 22px;
 }
 
 /* ===== CTA ===== */

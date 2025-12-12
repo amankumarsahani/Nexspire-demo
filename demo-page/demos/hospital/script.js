@@ -44,6 +44,8 @@ const facilities = [
 // ===== DOM Elements =====
 const servicesGrid = document.getElementById('servicesGrid');
 const doctorsGrid = document.getElementById('doctorsGrid');
+const departmentsGrid = document.getElementById('departmentsGrid');
+const facilitiesGrid = document.getElementById('facilitiesGrid');
 const appointmentModal = document.getElementById('appointmentModal');
 
 // ===== Render Services =====
@@ -74,6 +76,38 @@ function renderDoctors() {
                 <h3>${doctor.name}</h3>
                 <div class="doctor-specialty">${doctor.specialty}</div>
                 <div class="doctor-exp">${doctor.exp}</div>
+                <div class="doctor-education"><i class="fas fa-graduation-cap"></i> ${doctor.education}</div>
+                <div class="doctor-rating">
+                    ${'<i class="fas fa-star"></i>'.repeat(Math.floor(doctor.rating))}
+                    ${doctor.rating % 1 !== 0 ? '<i class="fas fa-star-half-alt"></i>' : ''}
+                    <span>${doctor.rating}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ===== Render Departments =====
+function renderDepartments() {
+    if (!departmentsGrid) return;
+    departmentsGrid.innerHTML = departments.map((dept, i) => `
+        <div class="department-card" style="animation: fadeIn 0.6s ease ${i * 0.1}s backwards">
+            <div class="dept-icon"><i class="fas ${dept.icon}"></i></div>
+            <h3>${dept.name}</h3>
+            <p>${dept.desc}</p>
+            ${dept.beds > 0 ? `<div class="dept-beds"><i class="fas fa-bed"></i> ${dept.beds} Beds</div>` : ''}
+        </div>
+    `).join('');
+}
+
+// ===== Render Facilities =====
+function renderFacilities() {
+    if (!facilitiesGrid) return;
+    facilitiesGrid.innerHTML = facilities.map((facility, i) => `
+        <div class="facility-card" style="animation: fadeIn 0.6s ease ${i * 0.15}s backwards">
+            <img src="${facility.image}" alt="${facility.title}" loading="lazy">
+            <div class="facility-overlay">
+                <h4>${facility.title}</h4>
             </div>
         </div>
     `).join('');
@@ -186,6 +220,8 @@ window.addEventListener('scroll', () => {
 // ===== Initialize =====
 renderServices();
 renderDoctors();
+renderDepartments();
+renderFacilities();
 
 // Trigger counter animation when in view
 const observer = new IntersectionObserver((entries) => {
