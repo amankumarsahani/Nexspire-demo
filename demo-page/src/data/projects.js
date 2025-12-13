@@ -54,5 +54,13 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop",
     tags: ["Spa", "Multi-page", "Luxury", "Responsive"],
     demoUrl: "./demos/grand-spa/index.html"
+  },
+  {
+    id: 8,
+    title: "Creative Portfolio",
+    description: "A stunning dark-themed portfolio template with animations, filtering, and responsive design.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+    tags: ["Portfolio", "Dark Theme", "Animated", "Responsive"],
+    demoUrl: "./demos/portfolio/index.html"
   }
 ];
