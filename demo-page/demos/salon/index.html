@@ -4,95 +4,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glamour Salon - Beauty & Style</title>
+    <title>LUXE | High-End Beauty Atelier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="gradient-bg"></div>
+    <!-- Aurora Background -->
+    <div class="aurora-bg">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+        <div class="noise-overlay"></div>
+    </div>
+
+    <!-- Cursor Trail -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo"><i class="fa-solid fa-scissors"></i><span>Glamour</span></div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#team">Team</a></li>
-            </ul>
-            <button class="btn-booking" onclick="showBookingModal()"><i class="fa-solid fa-calendar"></i><span>Book
-                    Now</span></button>
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-text">LUXE</span>
+                <span class="logo-dot"></span>
+            </a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#gallery" class="nav-link">Portfolio</a>
+                <a href="#team" class="nav-link">Artists</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://instagram.com" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <button class="btn-cta" onclick="openBooking()">
+                    Book Now
+                </button>
+            </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge" data-aos="fade-down"><i class="fa-solid fa-crown"></i><span>Premium Beauty
-                    Salon</span></div>
-            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">Where <span
-                    class="gradient-text">Beauty</span><br>Meets Artistry</h1>
-            <p class="hero-description" data-aos="fade-up" data-aos-delay="400">Transform your look with our expert
-                stylists and premium beauty services</p>
-            <button class="btn-primary" data-aos="fade-up" data-aos-delay="600" onclick="showBookingModal()"><span>Book
-                    Appointment</span><i class="fa-solid fa-sparkles"></i></button>
+        <div class="hero-bg">
+            <video autoplay muted loop playsinline>
+                <source
+                    src="https://assets.mixkit.co/videos/preview/mixkit-woman-doing-her-makeup-in-front-of-the-mirror-42703-large.mp4"
+                    type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="tag-line"></span>
+                    <span>PREMIUM BEAUTY EXPERIENCE</span>
+                    <span class="tag-line"></span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">REDEFINE</span>
+                    <span class="title-line outline">YOUR</span>
+                    <span class="title-line gradient">BEAUTY</span>
+                </h1>
+                <p class="hero-desc">Where artistry meets innovation. Experience transformative beauty sessions crafted
+                    by world-renowned stylists.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="openBooking()">
+                        <span>BOOK YOUR SESSION</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-ghost">
+                        <i class="fas fa-play"></i>
+                        <span>WATCH SHOWREEL</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
+    <!-- Stats Marquee -->
+    <div class="stats-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="marquee-item"><strong>10K+</strong> Happy Clients</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-item"><strong>50+</strong> Awards Won</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-item"><strong>5.0</strong> Rating</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-item"><strong>15+</strong> Years Experience</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-item"><strong>10K+</strong> Happy Clients</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-item"><strong>50+</strong> Awards Won</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-item"><strong>5.0</strong> Rating</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-item"><strong>15+</strong> Years Experience</span>
+                <span class="marquee-divider">✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
     <section class="services" id="services">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label">Our Services</span>
-            <h2 class="section-title">Premium Beauty Services</h2>
-            <p class="section-subtitle">Indulge in luxury treatments</p>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">OUR SERVICES</h2>
+                <p class="section-desc">Curated experiences designed to transform</p>
+            </div>
+            <div class="services-grid" id="servicesGrid"></div>
         </div>
-        <div class="services-grid" id="servicesGrid"></div>
     </section>
 
+    <!-- Gallery Section -->
     <section class="gallery" id="gallery">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label">Gallery</span>
-            <h2 class="section-title">Our Work</h2>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">PORTFOLIO</h2>
+                <p class="section-desc">Our finest transformations</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
         </div>
-        <div class="gallery-grid" id="galleryGrid"></div>
     </section>
 
+    <!-- Team Section -->
     <section class="team" id="team">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label">Our Team</span>
-            <h2 class="section-title">Expert Stylists</h2>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">THE ARTISTS</h2>
+                <p class="section-desc">Masters of their craft</p>
+            </div>
+            <div class="team-grid" id="teamGrid"></div>
         </div>
-        <div class="team-grid" id="teamGrid"></div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial-wrapper">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <div class="testimonial-content" id="testimonialContent">
+                    <p class="testimonial-text"></p>
+                    <div class="testimonial-author">
+                        <span class="author-name"></span>
+                        <span class="author-title"></span>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="nav-btn prev" onclick="prevTestimonial()"><i class="fas fa-arrow-left"></i></button>
+                    <button class="nav-btn next" onclick="nextTestimonial()"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">READY FOR YOUR<br><span class="gradient">TRANSFORMATION?</span></h2>
+                <button class="btn btn-primary btn-lg" onclick="openBooking()">
+                    <span>BOOK YOUR SESSION</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-text">LUXE</span>
+                        <span class="logo-dot"></span>
+                    </a>
+                    <p>High-end beauty atelier for the discerning.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-col">
+                        <h4>NAVIGATE</h4>
+                        <a href="#">Services</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Artists</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="link-col">
+                        <h4>SERVICES</h4>
+                        <a href="#">Hair Design</a>
+                        <a href="#">Color Art</a>
+                        <a href="#">Makeup</a>
+                        <a href="#">Bridal</a>
+                    </div>
+                    <div class="link-col">
+                        <h4>CONTACT</h4>
+                        <a href="#">+1 (555) 123-4567</a>
+                        <a href="#">hello@luxe.com</a>
+                        <a href="#">123 Luxury Ave, LA</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LUXE. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
     <div class="modal" id="bookingModal">
+        <div class="modal-backdrop" onclick="closeBooking()"></div>
         <div class="modal-content">
-            <button class="close-modal" onclick="closeBookingModal()"><i class="fa-solid fa-times"></i></button>
+            <button class="modal-close" onclick="closeBooking()">
+                <i class="fas fa-times"></i>
+            </button>
             <div class="modal-header">
-                <h2>Book Appointment</h2>
-                <p>Reserve your beauty session</p>
+                <h3>BOOK YOUR SESSION</h3>
+                <p>Reserve your spot with our artists</p>
             </div>
             <form class="booking-form" onsubmit="handleBooking(event)">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Phone" required>
-                <select required>
-                    <option value="">Select Service</option>
-                    <option>Haircut & Styling</option>
-                    <option>Hair Coloring</option>
-                    <option>Manicure</option>
-                    <option>Makeup</option>
-                </select>
-                <input type="date" required>
-                <input type="time" required>
-                <button type="submit" class="btn-primary btn-full"><span>Confirm Booking</span><i
-                        class="fa-solid fa-check"></i></button>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>NAME</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>EMAIL</label>
+                        <input type="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>PHONE</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>SERVICE</label>
+                        <select required>
+                            <option value="">Select</option>
+                            <option>Haircut & Styling</option>
+                            <option>Color Transformation</option>
+                            <option>Bridal Package</option>
+                            <option>Makeup Session</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>DATE</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>TIME</label>
+                        <input type="time" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>CONFIRM BOOKING</span>
+                </button>
             </form>
         </div>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 

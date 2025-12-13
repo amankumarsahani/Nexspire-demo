@@ -1,223 +1,335 @@
-// Initialize AOS
-AOS.init({
-    duration: 1200,
-    once: true,
-    offset: 100,
-    easing: 'ease-out-cubic'
+// STILLNESS Spa - Minimalist Premium Theme JavaScript
+
+// ===== Data =====
+const rituals = [
+    {
+        number: '01',
+        title: 'Signature Massage',
+        description: 'A deeply restorative full-body experience combining Swedish, deep tissue, and aromatherapy techniques.',
+        duration: '90 min',
+        price: '$195'
+    },
+    {
+        number: '02',
+        title: 'Hot Stone Therapy',
+        description: 'Heated volcanic stones placed on energy points melt tension and restore natural flow.',
+        duration: '75 min',
+        price: '$175'
+    },
+    {
+        number: '03',
+        title: 'Ayurvedic Journey',
+        description: 'Ancient Indian healing practice with warm oils tailored to your unique dosha type.',
+        duration: '120 min',
+        price: '$245'
+    },
+    {
+        number: '04',
+        title: 'Facial Glow',
+        description: 'Organic botanical facials customized for your skin type, restoring radiance and vitality.',
+        duration: '60 min',
+        price: '$155'
+    },
+    {
+        number: '05',
+        title: 'Body Wrap',
+        description: 'Detoxifying mineral or seaweed wraps that purify, hydrate, and rejuvenate.',
+        duration: '90 min',
+        price: '$185'
+    },
+    {
+        number: '06',
+        title: 'Thai Healing',
+        description: 'Traditional Thai massage combining stretching, acupressure, and energy work.',
+        duration: '90 min',
+        price: '$195'
+    }
+];
+
+const journeys = [
+    {
+        title: 'Half-Day Escape',
+        description: 'A curated 4-hour journey including massage, facial, and thermal bathing.',
+        price: '$395',
+        image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80'
+    },
+    {
+        title: 'Full-Day Retreat',
+        description: 'Complete wellness immersion with all treatments, yoga, and organic cuisine.',
+        price: '$695',
+        image: 'https://images.unsplash.com/photo-1540555700478-4be289fbec66?w=600&q=80'
+    },
+    {
+        title: 'Couples Harmony',
+        description: 'Shared wellness experience in our private couples suite with champagne.',
+        price: '$795',
+        image: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&q=80'
+    },
+    {
+        title: 'Weekend Wellness',
+        description: 'Two-day escape with overnight accommodations and premium treatments.',
+        price: '$1,295',
+        image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&q=80'
+    }
+];
+
+const features = [
+    { icon: 'fa-water', text: 'Thermal Mineral Pools' },
+    { icon: 'fa-leaf', text: '100% Organic Products' },
+    { icon: 'fa-spa', text: 'Private Treatment Suites' },
+    { icon: 'fa-om', text: 'Daily Yoga & Meditation' }
+];
+
+const testimonials = [
+    {
+        text: 'Stillness is more than a spa — it is a sanctuary. Every detail has been thoughtfully considered. I left feeling like a completely different person.',
+        author: 'SARAH MITCHELL — WELLNESS EDITOR'
+    },
+    {
+        text: 'The most transformative wellness experience I have ever had. The therapists are true healers, and the atmosphere is pure serenity.',
+        author: 'JENNIFER HAYES — FOUNDER, GLOW CO.'
+    },
+    {
+        text: 'I have visited spas around the world, and Stillness is in a league of its own. The attention to ritual and intention is unmatched.',
+        author: 'MICHAEL CHEN — ENTREPRENEUR'
+    }
+];
+
+let currentTestimonial = 0;
+
+// ===== DOM Ready =====
+document.addEventListener('DOMContentLoaded', () => {
+    renderRituals();
+    renderJourneys();
+    renderFeatures();
+    initTestimonials();
+    initNavbarScroll();
+    initScrollAnimations();
+    initDraggableScroll();
 });
 
-// Petal Animation
-function createPetals() {
-    const container = document.getElementById('petals');
-    const colors = ['#FFD7D7', '#FFE4E1', '#FFF0F5']; // Shades of soft pink
+// ===== Render Functions =====
+function renderRituals() {
+    const grid = document.getElementById('ritualsGrid');
+    if (!grid) return;
 
+    grid.innerHTML = rituals.map((ritual, index) => `
+        <div class="ritual-card" style="animation-delay: ${index * 0.1}s">
+            <span class="ritual-number">${ritual.number}</span>
+            <h3>${ritual.title}</h3>
+            <p>${ritual.description}</p>
+            <div class="ritual-meta">
+                <span class="ritual-duration">${ritual.duration}</span>
+                <span class="ritual-price">${ritual.price}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderJourneys() {
+    const track = document.getElementById('journeyTrack');
+    if (!track) return;
+
+    track.innerHTML = journeys.map((journey, index) => `
+        <div class="journey-card" style="animation-delay: ${index * 0.1}s">
+            <div class="journey-image">
+                <img src="${journey.image}" alt="${journey.title}">
+            </div>
+            <div class="journey-content">
+                <h3>${journey.title}</h3>
+                <p>${journey.description}</p>
+                <span class="journey-price">${journey.price}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderFeatures() {
+    const list = document.getElementById('sanctuaryFeatures');
+    if (!list) return;
+
+    list.innerHTML = features.map(feature => `
+        <li>
+            <span class="feature-icon"><i class="fas ${feature.icon}"></i></span>
+            <span>${feature.text}</span>
+        </li>
+    `).join('');
+}
+
+// ===== Testimonials =====
+function initTestimonials() {
+    showTestimonial(0);
+
+    // Auto-rotate testimonials
     setInterval(() => {
-        const petal = document.createElement('div');
-        petal.className = 'petal';
-
-        // Random properties
-        const startLeft = Math.random() * 100;
-        const size = Math.random() * 10 + 10;
-        const color = colors[Math.floor(Math.random() * colors.length)];
-
-        petal.style.left = startLeft + '%';
-        petal.style.width = size + 'px';
-        petal.style.height = size + 'px';
-        petal.style.background = color;
-        petal.style.animationDuration = (Math.random() * 5 + 10) + 's';
-
-        container.appendChild(petal);
-
-        // Cleanup
-        setTimeout(() => petal.remove(), 15000);
-    }, 800);
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        animateTestimonial();
+    }, 8000);
 }
 
-// Start visual effects
-setTimeout(createPetals, 500);
+function showTestimonial(index) {
+    const quoteEl = document.getElementById('testimonialQuote');
+    const authorEl = document.getElementById('testimonialAuthor');
 
-// Audio Control
-let isPlaying = false;
-// Note: In a real environment we would have an audio file. 
-// For this demo, we verify the toggle functionality works visually.
-function toggleAudio() {
-    const btn = document.getElementById('audioToggle');
-    const icon = btn.querySelector('i');
+    if (!quoteEl) return;
 
-    isPlaying = !isPlaying;
-
-    if (isPlaying) {
-        btn.classList.add('active');
-        icon.className = 'fa-solid fa-volume-high';
-        showNotification('Ambient sounds played');
-    } else {
-        btn.classList.remove('active');
-        icon.className = 'fa-solid fa-volume-off';
-        showNotification('Ambient sounds paused');
-    }
+    const testimonial = testimonials[index];
+    quoteEl.textContent = `"${testimonial.text}"`;
+    authorEl.textContent = `— ${testimonial.author}`;
 }
 
-// Data
-const treatments = [
-    {
-        icon: 'fa-hot-tub-person',
-        title: 'Hydrotherapy',
-        description: 'Healing water treatments to soothe muscles and calm the mind.',
-        duration: '45 mins'
-    },
-    {
-        icon: 'fa-hands-bubbles',
-        title: 'Deep Tissue',
-        description: 'Intensive massage targeting deep muscle layers for tension release.',
-        duration: '60/90 mins'
-    },
-    {
-        icon: 'fa-feather',
-        title: 'Aromatherapy',
-        description: 'Essential oils blended to enhance physical and emotional wellness.',
-        duration: '60 mins'
-    },
-    {
-        icon: 'fa-gem',
-        title: 'Hot Stone',
-        description: 'Smooth, heated stones placed on key points to melt away stress.',
-        duration: '75 mins'
-    },
-    {
-        icon: 'fa-mask-face',
-        title: 'Organic Facial',
-        description: 'Natural ingredients to nourish, cleanse and revitalize your skin.',
-        duration: '50 mins'
-    },
-    {
-        icon: 'fa-yin-yang',
-        title: 'Reiki Healing',
-        description: 'Energy healing technique to restore balance and harmony.',
-        duration: '60 mins'
-    }
-];
+function animateTestimonial() {
+    const quoteEl = document.getElementById('testimonialQuote');
+    const authorEl = document.getElementById('testimonialAuthor');
 
-const packages = [
-    {
-        title: 'Zen Harmony',
-        price: '$180',
-        image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80',
-        features: ['60min Aromatherapy Massage', 'Organic Facial', 'Herbal Tea Ceremony']
-    },
-    {
-        title: 'Royal Indulgence',
-        price: '$290',
-        image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80',
-        features: ['90min Hot Stone Massage', 'Full Body Scrub', 'Hydrotherapy Session', 'Spa Lunch']
-    },
-    {
-        title: 'Couples Retreat',
-        price: '$450',
-        image: 'https://images.unsplash.com/photo-1591343395882-a1b0293f30a2?w=600&q=80',
-        features: ['Side-by-side Massage', 'Private Jacuzzi Time', 'Champagne & Fruits', 'Relaxation Lounge']
-    }
-];
+    quoteEl.style.opacity = 0;
+    quoteEl.style.transform = 'translateY(20px)';
+    authorEl.style.opacity = 0;
 
-// Render Treatments
-const treatmentsGrid = document.getElementById('treatmentsGrid');
-treatments.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.className = 'treatment-card';
-    card.setAttribute('data-aos', 'fade-up');
-    card.setAttribute('data-aos-delay', index * 100);
-    card.innerHTML = `
-        <i class="fa-solid ${item.icon} treatment-icon"></i>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <div class="treatment-duration">${item.duration}</div>
-    `;
-    treatmentsGrid.appendChild(card);
+    setTimeout(() => {
+        showTestimonial(currentTestimonial);
+        quoteEl.style.opacity = 1;
+        quoteEl.style.transform = 'translateY(0)';
+        authorEl.style.opacity = 1;
+    }, 400);
+}
+
+// Add transition to testimonial elements
+document.addEventListener('DOMContentLoaded', () => {
+    const quoteEl = document.getElementById('testimonialQuote');
+    const authorEl = document.getElementById('testimonialAuthor');
+
+    if (quoteEl) {
+        quoteEl.style.transition = 'all 0.5s ease';
+        authorEl.style.transition = 'all 0.5s ease 0.1s';
+    }
 });
 
-// Render Packages
-const packagesGrid = document.getElementById('packagesGrid');
-packages.forEach((pkg, index) => {
-    const card = document.createElement('div');
-    card.className = 'package-card';
-    card.setAttribute('data-aos', 'fade-up');
-    card.setAttribute('data-aos-delay', index * 100);
+// ===== Navbar Scroll =====
+function initNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
 
-    const featuresList = pkg.features.map(f => `<li><i class="fa-solid fa-leaf"></i> ${f}</li>`).join('');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
 
-    card.innerHTML = `
-        <div class="package-image">
-            <img src="${pkg.image}" alt="${pkg.title}">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">${pkg.title}</h3>
-            <span class="package-price">${pkg.price}</span>
-            <ul class="package-features">${featuresList}</ul>
-            <button class="btn-primary btn-full" onclick="showBookingModal()">Reserve Package</button>
-        </div>
-    `;
-    packagesGrid.appendChild(card);
-});
-
-// Booking Modal Functions
-function showBookingModal() {
-    const modal = document.getElementById('bookingModal');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
 }
 
-function closeBookingModal() {
-    const modal = document.getElementById('bookingModal');
-    modal.classList.remove('active');
+// ===== Scroll Animations =====
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.ritual-card, .journey-card, .stat').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        observer.observe(el);
+    });
+
+    // Add visible state styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .ritual-card.visible, .journey-card.visible, .stat.visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// ===== Draggable Scroll for Journey Section =====
+function initDraggableScroll() {
+    const scroll = document.getElementById('journeyScroll');
+    if (!scroll) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    scroll.addEventListener('mousedown', (e) => {
+        isDown = true;
+        scroll.style.cursor = 'grabbing';
+        startX = e.pageX - scroll.offsetLeft;
+        scrollLeft = scroll.scrollLeft;
+    });
+
+    scroll.addEventListener('mouseleave', () => {
+        isDown = false;
+        scroll.style.cursor = 'grab';
+    });
+
+    scroll.addEventListener('mouseup', () => {
+        isDown = false;
+        scroll.style.cursor = 'grab';
+    });
+
+    scroll.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scroll.offsetLeft;
+        const walk = (x - startX) * 2;
+        scroll.scrollLeft = scrollLeft - walk;
+    });
+}
+
+// ===== Modal Functions =====
+function openReserve() {
+    document.getElementById('reserveModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeReserve() {
+    document.getElementById('reserveModal').classList.remove('active');
     document.body.style.overflow = '';
 }
 
-function handleBooking(e) {
+function handleReserve(e) {
     e.preventDefault();
-    closeBookingModal();
-    showNotification('Reservation request sent successfully. We will contact you shortly.');
-}
 
-// Notification System
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(47, 79, 79, 0.9);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        z-index: 10000;
-        font-family: 'Lato', sans-serif;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        animation: fadeIn 0.5s ease;
+    const form = e.target;
+    const originalContent = form.innerHTML;
+
+    form.innerHTML = `
+        <div style="text-align: center; padding: 48px 0;">
+            <div style="width: 72px; height: 72px; background: linear-gradient(135deg, #8FA68E, #7A9E9F); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; color: white; font-size: 28px;">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3 style="font-size: 28px; font-weight: 400; margin-bottom: 12px;">Reservation Confirmed</h3>
+            <p style="color: #5C5C5C; margin-bottom: 28px; font-size: 16px;">We look forward to welcoming you to Stillness.</p>
+            <button type="button" class="btn btn-primary" onclick="closeReserve()">
+                <span>Done</span>
+            </button>
+        </div>
     `;
-    notification.innerHTML = `<i class="fa-solid fa-check" style="margin-right: 10px;"></i> ${message}`;
-
-    document.body.appendChild(notification);
-
-    // Add fade in animation style if not present
-    if (!document.getElementById('notification-style')) {
-        const style = document.createElement('style');
-        style.id = 'notification-style';
-        style.textContent = `
-            @keyframes fadeIn { from { opacity: 0; transform: translate(-50%, 20px); } to { opacity: 1; transform: translate(-50%, 0); } }
-            @keyframes fadeOut { from { opacity: 1; transform: translate(-50%, 0); } to { opacity: 0; transform: translate(-50%, 20px); } }
-        `;
-        document.head.appendChild(style);
-    }
 
     setTimeout(() => {
-        notification.style.animation = 'fadeOut 0.5s ease forwards';
-        setTimeout(() => notification.remove(), 500);
-    }, 3000);
+        form.innerHTML = originalContent;
+    }, 5000);
 }
 
-// Close modal on outside click
-document.getElementById('bookingModal').addEventListener('click', (e) => {
-    if (e.target.id === 'bookingModal') closeBookingModal();
+// Close modal on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeReserve();
+    }
 });
-
-console.log('🌿 Serenity Spa loaded successfully');
