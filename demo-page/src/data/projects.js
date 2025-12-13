@@ -46,5 +46,13 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
     tags: ["HTML", "CSS"],
     demoUrl: "./demos/sample-project/index.html"
+  },
+  {
+    id: 7,
+    title: "Grand Spa - Luxury Wellness",
+    description: "A comprehensive multi-page spa experience featuring booking, blog, shop, and gallery.",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop",
+    tags: ["Spa", "Multi-page", "Luxury", "Responsive"],
+    demoUrl: "./demos/grand-spa/index.html"
   }
 ];
