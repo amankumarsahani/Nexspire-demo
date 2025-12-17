@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paradise Resort & Spa | Luxury Tropical Escape</title>
+    <title>Paradise Resort & Spa | Luxury Tropical Getaway</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
@@ -17,11 +17,7 @@
     <!-- Animated Background -->
     <div class="bg-animation">
         <div class="gradient-morph"></div>
-        <div class="floating-particles" id="particles"></div>
-        <div class="palm-silhouettes">
-            <div class="palm palm-1"></div>
-            <div class="palm palm-2"></div>
-        </div>
+        <div class="particles" id="particles"></div>
     </div>
 
     <!-- Navigation -->
@@ -29,7 +25,7 @@
         <div class="container">
             <a href="#" class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-umbrella-beach"></i>
+                    <i class="fas fa-sun"></i>
                 </div>
                 <span class="logo-text">Paradise<span class="accent">Resort</span></span>
             </a>
@@ -43,10 +39,10 @@
             <div class="nav-actions">
                 <a href="tel:+1234567890" class="phone-btn">
                     <i class="fas fa-phone-alt"></i>
-                    <span>+1 (234) 567-890</span>
+                    <span>+1 234 567 890</span>
                 </a>
                 <button class="btn-book" onclick="openBookingModal()">
-                    <span>Book Your Stay</span>
+                    <span>Book Now</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -59,56 +55,53 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-video-bg">
-            <video autoplay muted loop playsinline>
-                <source
-                    src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-beach-with-palm-trees-1089-large.mp4"
-                    type="video/mp4">
-            </video>
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80" alt="Paradise Resort">
             <div class="hero-overlay"></div>
         </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <span class="badge-star"><i class="fas fa-star"></i></span>
+                    <i class="fas fa-star badge-star"></i>
                     <span>5-Star Luxury Experience</span>
                 </div>
                 <h1 class="hero-title">
-                    <span class="title-line">Discover Your</span>
-                    <span class="title-line shimmer">Tropical Paradise</span>
+                    <span class="title-line">Escape to</span>
+                    <span class="title-line shimmer">Paradise</span>
                 </h1>
-                <p class="hero-desc">Escape to a world of pristine beaches, crystal-clear waters, and unparalleled
-                    luxury. Your dream vacation awaits at Paradise Resort & Spa.</p>
+                <p class="hero-desc">Discover an exclusive tropical sanctuary where pristine beaches meet world-class
+                    luxury. Your extraordinary journey begins here.</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="openBookingModal()">
-                        <span>Reserve Now</span>
-                        <i class="fas fa-arrow-right"></i>
+                        <span>Reserve Your Stay</span>
+                        <i class="fas fa-calendar-alt"></i>
                     </button>
-                    <button class="btn btn-glass" onclick="playVideo()">
-                        <i class="fas fa-play"></i>
-                        <span>Virtual Tour</span>
-                    </button>
+                    <a href="#rooms" class="btn btn-glass">
+                        <span>Explore Rooms</span>
+                        <i class="fas fa-door-open"></i>
+                    </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number" data-target="150">0</span>
-                        <span class="stat-label">Luxury Suites</span>
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Years of Excellence</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50000">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Happy Guests</span>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
                         <span class="stat-number" data-target="98">0</span>
                         <span class="stat-suffix">%</span>
-                        <span class="stat-label">Guest Satisfaction</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="25">0</span>
-                        <span class="stat-label">Years of Excellence</span>
+                        <span class="stat-label">Satisfaction Rate</span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="scroll-indicator">
-            <span>Scroll to Explore</span>
+            <span>Scroll to explore</span>
             <div class="scroll-line"></div>
         </div>
     </section>
@@ -119,21 +112,17 @@
             <div class="marquee-content">
                 <span class="marquee-item"><i class="fas fa-swimming-pool"></i> Infinity Pool</span>
                 <span class="marquee-divider">✦</span>
-                <span class="marquee-item"><i class="fas fa-spa"></i> World-Class Spa</span>
-                <span class="marquee-divider">✦</span>
-                <span class="marquee-item"><i class="fas fa-utensils"></i> Gourmet Dining</span>
+                <span class="marquee-item"><i class="fas fa-spa"></i> Luxury Spa</span>
                 <span class="marquee-divider">✦</span>
                 <span class="marquee-item"><i class="fas fa-umbrella-beach"></i> Private Beach</span>
                 <span class="marquee-divider">✦</span>
-                <span class="marquee-item"><i class="fas fa-dumbbell"></i> Fitness Center</span>
+                <span class="marquee-item"><i class="fas fa-utensils"></i> Fine Dining</span>
                 <span class="marquee-divider">✦</span>
-                <span class="marquee-item"><i class="fas fa-water"></i> Water Sports</span>
+                <span class="marquee-item"><i class="fas fa-wifi"></i> Free WiFi</span>
                 <span class="marquee-divider">✦</span>
                 <span class="marquee-item"><i class="fas fa-swimming-pool"></i> Infinity Pool</span>
                 <span class="marquee-divider">✦</span>
-                <span class="marquee-item"><i class="fas fa-spa"></i> World-Class Spa</span>
-                <span class="marquee-divider">✦</span>
-                <span class="marquee-item"><i class="fas fa-utensils"></i> Gourmet Dining</span>
+                <span class="marquee-item"><i class="fas fa-spa"></i> Luxury Spa</span>
                 <span class="marquee-divider">✦</span>
                 <span class="marquee-item"><i class="fas fa-umbrella-beach"></i> Private Beach</span>
                 <span class="marquee-divider">✦</span>
@@ -147,7 +136,8 @@
             <div class="section-header">
                 <span class="section-tag"><i class="fas fa-bed"></i> Accommodations</span>
                 <h2 class="section-title">Luxurious <span class="gradient-text">Rooms & Suites</span></h2>
-                <p class="section-desc">Experience the epitome of comfort in our elegantly designed accommodations</p>
+                <p class="section-desc">Each room is a haven of comfort, designed to provide an unparalleled experience
+                    of relaxation and indulgence.</p>
             </div>
             <div class="rooms-grid" id="roomsGrid"></div>
         </div>
@@ -157,9 +147,9 @@
     <section class="amenities" id="amenities">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-concierge-bell"></i> Resort Amenities</span>
-                <h2 class="section-title">World-Class <span class="gradient-text">Experiences</span></h2>
-                <p class="section-desc">Indulge in our premium facilities designed for your ultimate relaxation</p>
+                <span class="section-tag light"><i class="fas fa-concierge-bell"></i> Resort Amenities</span>
+                <h2 class="section-title">World-Class <span class="gradient-text">Facilities</span></h2>
+                <p class="section-desc">Everything you need for a perfect getaway, all within reach.</p>
             </div>
             <div class="amenities-grid" id="amenitiesGrid"></div>
         </div>
@@ -170,26 +160,26 @@
         <div class="container">
             <div class="dining-wrapper">
                 <div class="dining-content">
-                    <span class="section-tag light"><i class="fas fa-wine-glass-alt"></i> Culinary Excellence</span>
-                    <h2 class="dining-title">Exquisite <span class="gradient-text">Dining</span></h2>
-                    <p class="dining-desc">Savor the finest cuisines prepared by our award-winning chefs. From fresh
-                        seafood to international delicacies, every meal is a journey of flavors.</p>
+                    <span class="section-tag"><i class="fas fa-utensils"></i> Culinary Excellence</span>
+                    <h2 class="dining-title">Exceptional <span class="gradient-text">Dining</span></h2>
+                    <p class="dining-desc">Embark on a gastronomic journey with our world-renowned chefs. From fresh
+                        seafood to international cuisine, every meal is an experience to remember.</p>
                     <div class="dining-features">
                         <div class="feature-item">
                             <i class="fas fa-fish"></i>
-                            <span>Ocean Fresh Seafood</span>
+                            <span>Ocean-Fresh Seafood</span>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-globe-americas"></i>
-                            <span>International Cuisine</span>
+                            <i class="fas fa-wine-glass-alt"></i>
+                            <span>Premium Wine Selection</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Farm-to-Table Organic</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-cocktail"></i>
                             <span>Signature Cocktails</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-moon"></i>
-                            <span>Sunset Dinners</span>
                         </div>
                     </div>
                     <button class="btn btn-primary" onclick="openBookingModal()">
@@ -201,22 +191,15 @@
                     <div class="gallery-item main">
                         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
                             alt="Fine Dining">
-                        <div class="gallery-overlay">
-                            <span>The Ocean Terrace</span>
-                        </div>
+                        <div class="gallery-overlay"><span>The Oceanview Restaurant</span></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80"
-                            alt="Gourmet Food">
-                        <div class="gallery-overlay">
-                            <span>Gourmet Delights</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" alt="Bar">
+                        <div class="gallery-overlay"><span>Sunset Lounge</span></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&q=80" alt="Cocktails">
-                        <div class="gallery-overlay">
-                            <span>Cocktail Bar</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" alt="Cuisine">
+                        <div class="gallery-overlay"><span>Chef's Table</span></div>
                     </div>
                 </div>
             </div>
@@ -227,9 +210,8 @@
     <section class="gallery" id="gallery">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-images"></i> Photo Gallery</span>
+                <span class="section-tag"><i class="fas fa-camera"></i> Gallery</span>
                 <h2 class="section-title">Capture the <span class="gradient-text">Moments</span></h2>
-                <p class="section-desc">Glimpses of paradise awaiting your arrival</p>
             </div>
             <div class="gallery-grid" id="galleryGrid"></div>
         </div>
@@ -244,9 +226,9 @@
             </div>
             <div class="testimonials-slider" id="testimonialsSlider"></div>
             <div class="slider-nav">
-                <button class="slider-btn prev" onclick="prevTestimonial()"><i class="fas fa-arrow-left"></i></button>
+                <button class="slider-btn" onclick="prevTestimonial()"><i class="fas fa-chevron-left"></i></button>
                 <div class="slider-dots" id="sliderDots"></div>
-                <button class="slider-btn next" onclick="nextTestimonial()"><i class="fas fa-arrow-right"></i></button>
+                <button class="slider-btn" onclick="nextTestimonial()"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -255,17 +237,16 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready for Your <span class="gradient-text">Dream Escape?</span></h2>
-                <p class="cta-desc">Book now and receive 20% off on your first stay, plus complimentary spa treatment
-                </p>
+                <h2 class="cta-title">Ready for Your <span class="gradient-text">Dream Vacation?</span></h2>
+                <p class="cta-desc">Book now and receive exclusive resort credits for your next visit.</p>
                 <div class="cta-buttons">
                     <button class="btn btn-primary btn-lg" onclick="openBookingModal()">
-                        <span>Book Your Paradise</span>
+                        <span>Book Your Stay</span>
                         <i class="fas fa-arrow-right"></i>
                     </button>
                     <a href="tel:+1234567890" class="btn btn-glass btn-lg">
                         <i class="fas fa-phone-alt"></i>
-                        <span>Call Us Now</span>
+                        <span>+1 234 567 890</span>
                     </a>
                 </div>
             </div>
@@ -279,17 +260,17 @@
                 <div class="footer-brand">
                     <a href="#" class="logo">
                         <div class="logo-icon">
-                            <i class="fas fa-umbrella-beach"></i>
+                            <i class="fas fa-sun"></i>
                         </div>
                         <span class="logo-text">Paradise<span class="accent">Resort</span></span>
                     </a>
-                    <p>Your gateway to tropical luxury. Experience the perfect blend of natural beauty and world-class
-                        hospitality.</p>
+                    <p>Experience the epitome of luxury at Paradise Resort & Spa. Where every moment becomes a cherished
+                        memory.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -302,20 +283,20 @@
                 <div class="footer-links">
                     <h4>Experiences</h4>
                     <a href="#">Water Sports</a>
-                    <a href="#">Beach Activities</a>
                     <a href="#">Island Tours</a>
+                    <a href="#">Cooking Classes</a>
                     <a href="#">Sunset Cruises</a>
                 </div>
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Paradise Island, Tropical Bay</p>
-                    <p><i class="fas fa-phone"></i> +1 (234) 567-890</p>
-                    <p><i class="fas fa-envelope"></i> hello@paradiseresort.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Paradise Island, Maldives</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope"></i> reservations@paradise.com</p>
                     <p><i class="fas fa-clock"></i> 24/7 Concierge Service</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Paradise Resort & Spa. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2024 Paradise Resort & Spa. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -332,39 +313,9 @@
                     <i class="fas fa-calendar-check"></i>
                 </div>
                 <h3>Book Your Stay</h3>
-                <p>Experience paradise - reserve your dream vacation</p>
+                <p>Complete the form to reserve your paradise getaway</p>
             </div>
             <form class="booking-form" onsubmit="handleBooking(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" placeholder="John Doe" required>
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="john@email.com" required>
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" placeholder="+1 234 567 890" required>
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="form-group">
-                        <label>Number of Guests</label>
-                        <select required>
-                            <option value="">Select</option>
-                            <option>1 Guest</option>
-                            <option>2 Guests</option>
-                            <option>3 Guests</option>
-                            <option>4+ Guests</option>
-                        </select>
-                        <i class="fas fa-users"></i>
-                    </div>
-                </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Check-in Date</label>
@@ -377,21 +328,31 @@
                         <i class="fas fa-calendar"></i>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Room Type</label>
-                    <select required>
-                        <option value="">Select Room Type</option>
-                        <option>Deluxe Ocean View - $450/night</option>
-                        <option>Premium Suite - $750/night</option>
-                        <option>Presidential Villa - $1,200/night</option>
-                        <option>Beach Bungalow - $850/night</option>
-                    </select>
-                    <i class="fas fa-bed"></i>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Guests</label>
+                        <select required>
+                            <option value="">Select</option>
+                            <option>1 Adult</option>
+                            <option>2 Adults</option>
+                            <option>2 Adults, 1 Child</option>
+                            <option>2 Adults, 2 Children</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Room Type</label>
+                        <select required>
+                            <option value="">Select</option>
+                            <option>Deluxe Ocean View</option>
+                            <option>Premium Suite</option>
+                            <option>Presidential Villa</option>
+                            <option>Beach Bungalow</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Special Requests</label>
-                    <textarea placeholder="Any special requests or preferences..." rows="3"></textarea>
-                    <i class="fas fa-comment-alt"></i>
+                    <textarea placeholder="Any special requests or celebrations..."></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-full">
                     <span>Confirm Reservation</span>
@@ -405,8 +366,8 @@
     <div class="toast" id="successToast">
         <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
         <div class="toast-content">
-            <strong>Booking Confirmed!</strong>
-            <p>We'll send confirmation details to your email shortly.</p>
+            <strong>Reservation Confirmed!</strong>
+            <p>We'll send confirmation details to your email.</p>
         </div>
     </div>
 

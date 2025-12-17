@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savoria | Artisan Cafe & Bistro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="warm-gradient"></div>
+        <div class="coffee-beans" id="coffeeBeans"></div>
+        <div class="steam-effects">
+            <div class="steam steam-1"></div>
+            <div class="steam steam-2"></div>
+            <div class="steam steam-3"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-mug-hot"></i>
+                </div>
+                <span class="logo-text">Savoria</span>
+            </a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#specials" class="nav-link">Specials</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+            </div>
+            <div class="nav-actions">
+                <a href="tel:+1234567890" class="phone-btn">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <button class="btn-reserve" onclick="openReservationModal()">
+                    <span>Reserve Table</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1920&q=80" alt="Cafe Interior">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i>
+                    <span>Award-Winning Since 2015</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Where Every</span>
+                    <span class="title-line accent">Sip Tells</span>
+                    <span class="title-line">A Story</span>
+                </h1>
+                <p class="hero-desc">Experience artisan coffee, handcrafted pastries, and wholesome meals in a cozy
+                    atmosphere that feels like home.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openReservationModal()">
+                        <span>Reserve a Table</span>
+                        <i class="fas fa-calendar-alt"></i>
+                    </button>
+                    <a href="#menu" class="btn btn-glass">
+                        <span>View Our Menu</span>
+                        <i class="fas fa-utensils"></i>
+                    </a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-coffee"></i>
+                        <span>Premium Coffee</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bread-slice"></i>
+                        <span>Fresh Pastries</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-wifi"></i>
+                        <span>Free WiFi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Hours Marquee -->
+    <div class="hours-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="marquee-item"><i class="fas fa-clock"></i> Open Daily 7AM - 10PM</span>
+                <span class="marquee-divider">☕</span>
+                <span class="marquee-item"><i class="fas fa-sun"></i> Breakfast All Day</span>
+                <span class="marquee-divider">☕</span>
+                <span class="marquee-item"><i class="fas fa-glass-cheers"></i> Happy Hour 4-7PM</span>
+                <span class="marquee-divider">☕</span>
+                <span class="marquee-item"><i class="fas fa-music"></i> Live Jazz Fridays</span>
+                <span class="marquee-divider">☕</span>
+                <span class="marquee-item"><i class="fas fa-clock"></i> Open Daily 7AM - 10PM</span>
+                <span class="marquee-divider">☕</span>
+                <span class="marquee-item"><i class="fas fa-sun"></i> Breakfast All Day</span>
+                <span class="marquee-divider">☕</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-book-open"></i> Our Menu</span>
+                <h2 class="section-title">Crafted with <span class="gradient-text">Love</span></h2>
+                <p class="section-desc">From farm-fresh ingredients to artisan recipes, every dish tells a story</p>
+            </div>
+
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="coffee">
+                    <i class="fas fa-coffee"></i>
+                    <span>Coffee</span>
+                </button>
+                <button class="menu-tab" data-category="breakfast">
+                    <i class="fas fa-egg"></i>
+                    <span>Breakfast</span>
+                </button>
+                <button class="menu-tab" data-category="lunch">
+                    <i class="fas fa-hamburger"></i>
+                    <span>Lunch</span>
+                </button>
+                <button class="menu-tab" data-category="pastries">
+                    <i class="fas fa-cookie"></i>
+                    <span>Pastries</span>
+                </button>
+            </div>
+
+            <div class="menu-grid" id="menuGrid"></div>
+        </div>
+    </section>
+
+    <!-- Specials Section -->
+    <section class="specials" id="specials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag light"><i class="fas fa-star"></i> Chef's Specials</span>
+                <h2 class="section-title">Today's <span class="gradient-text">Favorites</span></h2>
+            </div>
+            <div class="specials-grid" id="specialsGrid"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-images">
+                    <div class="about-img main">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80"
+                            alt="Barista">
+                    </div>
+                    <div class="about-img secondary">
+                        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&q=80" alt="Coffee">
+                    </div>
+                    <div class="about-badge">
+                        <span class="years">9</span>
+                        <span class="label">Years of Excellence</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag"><i class="fas fa-heart"></i> Our Story</span>
+                    <h2 class="about-title">More Than Just <span class="gradient-text">Coffee</span></h2>
+                    <p class="about-desc">Founded in 2015, Savoria began as a small corner cafe with a simple mission:
+                        serve exceptional coffee and create a welcoming space for our community.</p>
+                    <p class="about-desc">Today, we're proud to source our beans from ethical farms worldwide, roast
+                        them in-house, and serve you the freshest cup possible. Every pastry is baked fresh each morning
+                        by our talented team.</p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="stat-number">15K+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Menu Items</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Awards Won</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openReservationModal()">
+                        <span>Visit Us Today</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-camera"></i> Gallery</span>
+                <h2 class="section-title">A Glimpse of <span class="gradient-text">Savoria</span></h2>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-quote-left"></i> Reviews</span>
+                <h2 class="section-title">What Our <span class="gradient-text">Guests Say</span></h2>
+            </div>
+            <div class="reviews-grid" id="reviewsGrid"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready for a <span class="gradient-text">Perfect Cup?</span></h2>
+                <p class="cta-desc">Join us for breakfast, lunch, or just a coffee break. We can't wait to serve you!
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="openReservationModal()">
+                        <span>Reserve Your Table</span>
+                        <i class="fas fa-calendar-check"></i>
+                    </button>
+                    <a href="tel:+1234567890" class="btn btn-glass btn-lg">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Call Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <span class="logo-text">Savoria</span>
+                    </a>
+                    <p>Artisan coffee, handcrafted pastries, and wholesome meals in the heart of the city.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#menu">Our Menu</a>
+                    <a href="#specials">Today's Specials</a>
+                    <a href="#about">Our Story</a>
+                    <a href="#gallery">Gallery</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Hours</h4>
+                    <a href="#">Mon-Thu: 7AM - 9PM</a>
+                    <a href="#">Fri-Sat: 7AM - 11PM</a>
+                    <a href="#">Sunday: 8AM - 8PM</a>
+                    <a href="#">Happy Hour: 4-7PM</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Visit Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Coffee Street, Downtown</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope"></i> hello@savoria.com</p>
+                    <p><i class="fas fa-parking"></i> Free Parking Available</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Savoria Cafe & Bistro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation Modal -->
+    <div class="modal" id="reservationModal">
+        <div class="modal-backdrop" onclick="closeReservationModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeReservationModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3>Reserve Your Table</h3>
+                <p>Book ahead for the perfect dining experience</p>
+            </div>
+            <form class="reservation-form" onsubmit="handleReservation(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" placeholder="+1 234 567 890" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <select required>
+                            <option value="">Select time</option>
+                            <option>8:00 AM</option>
+                            <option>9:00 AM</option>
+                            <option>10:00 AM</option>
+                            <option>11:00 AM</option>
+                            <option>12:00 PM</option>
+                            <option>1:00 PM</option>
+                            <option>2:00 PM</option>
+                            <option>6:00 PM</option>
+                            <option>7:00 PM</option>
+                            <option>8:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Guests</label>
+                        <select required>
+                            <option value="">Select</option>
+                            <option>1 Guest</option>
+                            <option>2 Guests</option>
+                            <option>3-4 Guests</option>
+                            <option>5-6 Guests</option>
+                            <option>7+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Occasion</label>
+                        <select>
+                            <option value="">Select (optional)</option>
+                            <option>Birthday</option>
+                            <option>Anniversary</option>
+                            <option>Business Meeting</option>
+                            <option>Date Night</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Special Requests</label>
+                    <textarea placeholder="Dietary restrictions, seating preferences..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Confirm Reservation</span>
+                    <i class="fas fa-check"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast" id="successToast">
+        <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="toast-content">
+            <strong>Table Reserved!</strong>
+            <p>We'll send you a confirmation shortly.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

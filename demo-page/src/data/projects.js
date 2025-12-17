@@ -1,7 +1,33 @@
 export const projects = [
-  // --- Corporate & Creative ---
+  // --- New Premium Demos ---
   {
     id: 1,
+    title: "Paradise Resort & Spa",
+    description: "Luxury tropical resort with immersive video hero, room booking, and stunning gold-accented animations.",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80",
+    tags: ["Resort", "Luxury", "Immersive"],
+    demoUrl: "./demos/resort/index.html"
+  },
+  {
+    id: 2,
+    title: "SwiftShip Courier",
+    description: "Modern courier service with live tracking simulation, shipping calculator, and sleek neon interface.",
+    image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80",
+    tags: ["Logistics", "Tracking", "Interactive"],
+    demoUrl: "./demos/courier/index.html"
+  },
+  {
+    id: 3,
+    title: "Savoria Cafe & Bistro",
+    description: "Artisanal cafe with animated menu filtering, table reservations, and warm culinary aesthetics.",
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80",
+    tags: ["Restaurant", "Cafe", "Booking"],
+    demoUrl: "./demos/cafe/index.html"
+  },
+
+  // --- Corporate & Creative ---
+  {
+    id: 4,
     title: "Nexspire Tech",
     description: "Modern SaaS and digital agency website template with dark mode and sleek animations.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
@@ -50,31 +76,6 @@ export const projects = [
     description: "A basic demonstration of the multi-page setup. Showcases how to add new projects.",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
     tags: ["HTML", "CSS"],
-    demoUrl: "./demos/sample-project/index.html"
-  },
-  {
-    id: 7,
-    title: "Paradise Resort & Spa",
-    description: "Luxury tropical resort with immersive video hero, room booking, and stunning gold-accented animations.",
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80",
-    tags: ["Resort", "Luxury", "Immersive"],
-    demoUrl: "./demos/resort/index.html"
-  },
-  {
-    id: 8,
-    title: "SwiftShip Courier",
-    description: "Modern courier service with live tracking simulation, shipping calculator, and sleek neon interface.",
-    image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80",
-    tags: ["Logistics", "Tracking", "Interactive"],
-    demoUrl: "./demos/courier/index.html"
-  },
-  {
-    id: 9,
-    title: "Savoria Cafe & Bistro",
-    description: "Artisanal cafe with animated menu filtering, table reservations, and warm culinary aesthetics.",
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80",
-    tags: ["Restaurant", "Cafe", "Booking"],
-    demoUrl: "./demos/cafe/index.html"
   },
   {
     id: 10,
