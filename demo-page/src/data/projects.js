@@ -1,6 +1,14 @@
 export const projects = [
   // --- New Premium Demos ---
   {
+    id: 101,
+    title: "MEHER — Fine Jewellery House",
+    description: "Editorial luxury jewellery commerce: cinematic hero, atelier storytelling, quick-view, live cart drawer and bespoke booking.",
+    image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&q=80",
+    tags: ["Jewellery", "Luxury", "E-commerce", "Editorial"],
+    demoUrl: "./demos/meher/index.html"
+  },
+  {
     id: 1,
     title: "Paradise Resort & Spa",
     description: "Luxury tropical resort with immersive video hero, room booking, and stunning gold-accented animations.",

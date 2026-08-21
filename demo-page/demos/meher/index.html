@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MEHER — Fine Jewellery House | Nexspire Solutions</title>
+    <meta name="description" content="An heirloom jewellery house since 1974. Editorial luxury e-commerce demo with cinematic scroll, atelier storytelling, bespoke appointments and a full cart experience.">
+    <meta name="keywords" content="Jewellery, Luxury, E-commerce, Editorial, Nexspire Solutions">
+    <meta name="author" content="Nexspire Solutions">
+    <meta name="copyright" content="Nexspire Solutions https://nexspiresolutions.co.in">
+    <link rel="canonical" href="https://demo.nexspiresolutions.co.in/demos/meher/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://demo.nexspiresolutions.co.in/demos/meher/">
+    <meta property="og:title" content="MEHER — Fine Jewellery House">
+    <meta property="og:description" content="Heirloom jewellery, made by hand since 1974. A cinematic luxury commerce experience.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=80">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://demo.nexspiresolutions.co.in/demos/meher/">
+    <meta property="twitter:title" content="MEHER — Fine Jewellery House">
+    <meta property="twitter:description" content="Heirloom jewellery, made by hand since 1974.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=80">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0B0A08">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============ PRELOADER ============ -->
+    <div class="loader" id="loader">
+        <div class="loader__inner">
+            <div class="loader__mark" aria-hidden="true">
+                <svg viewBox="0 0 100 100" class="loader__svg">
+                    <circle cx="50" cy="50" r="38" class="loader__ring" />
+                </svg>
+                <span class="loader__letter">M</span>
+            </div>
+            <div class="loader__meta">
+                <span class="loader__word">Meher</span>
+                <span class="loader__count" id="loaderCount">00</span>
+            </div>
+        </div>
+        <div class="loader__curtain"></div>
+    </div>
+
+    <!-- ============ CURSOR ============ -->
+    <div class="cursor" id="cursor" aria-hidden="true">
+        <span class="cursor__label" id="cursorLabel"></span>
+    </div>
+
+    <!-- ============ ANNOUNCEMENT ============ -->
+    <div class="ticker" id="ticker">
+        <div class="ticker__track">
+            <span>Complimentary insured shipping across India</span><span class="ticker__dot">◆</span>
+            <span>BIS Hallmarked 22K &amp; 18K gold</span><span class="ticker__dot">◆</span>
+            <span>Lifetime exchange on every Meher piece</span><span class="ticker__dot">◆</span>
+            <span>Book a private viewing at our Jaipur atelier</span><span class="ticker__dot">◆</span>
+            <span>Complimentary insured shipping across India</span><span class="ticker__dot">◆</span>
+            <span>BIS Hallmarked 22K &amp; 18K gold</span><span class="ticker__dot">◆</span>
+            <span>Lifetime exchange on every Meher piece</span><span class="ticker__dot">◆</span>
+            <span>Book a private viewing at our Jaipur atelier</span><span class="ticker__dot">◆</span>
+        </div>
+    </div>
+
+    <!-- ============ NAV ============ -->
+    <header class="nav" id="nav">
+        <div class="nav__inner">
+            <nav class="nav__links nav__links--left">
+                <a href="#collections" data-scroll>Collections</a>
+                <a href="#pieces" data-scroll>Shop</a>
+                <a href="#atelier" data-scroll>The Atelier</a>
+            </nav>
+
+            <a href="#top" class="brand" data-scroll aria-label="Meher home">
+                <span class="brand__name">MEHER</span>
+                <span class="brand__sub">Fine Jewellery · Est. 1974</span>
+            </a>
+
+            <div class="nav__links nav__links--right">
+                <a href="#bespoke" data-scroll class="hide-sm">Bespoke</a>
+                <a href="#visit" data-scroll class="hide-sm">Visit</a>
+                <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+                    Bag <span class="cart-btn__count" id="cartCount">0</span>
+                </button>
+                <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="menu" id="menu">
+        <div class="menu__list">
+            <a href="#collections" data-scroll data-menu-link><em>01</em> Collections</a>
+            <a href="#pieces" data-scroll data-menu-link><em>02</em> Shop</a>
+            <a href="#atelier" data-scroll data-menu-link><em>03</em> The Atelier</a>
+            <a href="#bespoke" data-scroll data-menu-link><em>04</em> Bespoke</a>
+            <a href="#journal" data-scroll data-menu-link><em>05</em> Journal</a>
+            <a href="#visit" data-scroll data-menu-link><em>06</em> Visit</a>
+        </div>
+        <div class="menu__foot">
+            <span>Jaipur · Mumbai · Delhi</span>
+            <span>+91 98290 00000</span>
+        </div>
+    </div>
+
+    <main id="top">
+
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="hero">
+            <div class="hero__media" data-parallax="0.18">
+                <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1800&q=85" alt="Model wearing a gold Meher necklace" data-img>
+                <div class="hero__scrim"></div>
+            </div>
+
+            <div class="hero__content">
+                <p class="eyebrow reveal" data-delay="0">Jaipur · Since 1974</p>
+                <h1 class="hero__title">
+                    <span class="line"><span>Heirlooms</span></span>
+                    <span class="line"><span>for the <em>living</em></span></span>
+                </h1>
+                <p class="hero__lede reveal" data-delay="600">
+                    Fifty-one years of hand-setting stones in the old city. Every Meher piece is drawn,
+                    cast, set and polished by four pairs of hands — then signed.
+                </p>
+                <div class="hero__cta reveal" data-delay="750">
+                    <a href="#pieces" class="btn btn--gold" data-scroll data-magnet>Explore the Maison</a>
+                    <a href="#bespoke" class="btn btn--ghost" data-scroll data-magnet>Commission a piece</a>
+                </div>
+            </div>
+
+            <div class="hero__side">
+                <div class="hero__stat"><b>51</b><span>Years</span></div>
+                <div class="hero__rule"></div>
+                <div class="hero__stat"><b>9,400</b><span>Heirlooms made</span></div>
+            </div>
+
+            <a href="#collections" class="scroll-cue" data-scroll>
+                <span>Scroll</span>
+                <i></i>
+            </a>
+        </section>
+
+        <!-- ============ MANIFESTO ============ -->
+        <section class="manifesto section">
+            <p class="manifesto__text">
+                <span class="w">We</span> <span class="w">do</span> <span class="w">not</span> <span class="w">make</span>
+                <span class="w">jewellery</span> <span class="w">to</span> <span class="w">be</span> <span class="w">worn</span>
+                <span class="w">once.</span> <span class="w">We</span> <span class="w">make</span> <span class="w">the</span>
+                <span class="w">thing</span> <span class="w">your</span> <span class="w">daughter</span>
+                <span class="w">will</span> <span class="w">fight</span> <span class="w">her</span>
+                <span class="w">sister</span> <span class="w">for.</span>
+            </p>
+            <div class="manifesto__sign reveal">
+                <span class="sig">Meher Kothari</span>
+                <span class="eyebrow">Third-generation master setter</span>
+            </div>
+        </section>
+
+        <!-- ============ COLLECTIONS ============ -->
+        <section class="section collections" id="collections">
+            <header class="sec-head">
+                <p class="eyebrow reveal">01 — Collections</p>
+                <h2 class="sec-title reveal">Four houses,<br><em>one hand.</em></h2>
+                <p class="sec-note reveal">Each collection begins as a pencil drawing in the Jaipur studio and ends as a
+                    single, numbered piece. Nothing is repeated more than nine times.</p>
+            </header>
+
+            <div class="coll-grid">
+                <article class="coll coll--tall reveal" data-cursor="View">
+                    <div class="coll__media" data-parallax="0.08">
+                        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=85" alt="Solitaire rings" data-img>
+                    </div>
+                    <div class="coll__body">
+                        <span class="coll__idx">01</span>
+                        <h3>Vivaah</h3>
+                        <p>Bridal solitaires &amp; polki sets</p>
+                        <span class="coll__link">See 24 pieces</span>
+                    </div>
+                </article>
+
+                <article class="coll reveal" data-delay="90" data-cursor="View">
+                    <div class="coll__media" data-parallax="0.06">
+                        <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1000&q=85" alt="Gold earrings" data-img>
+                    </div>
+                    <div class="coll__body">
+                        <span class="coll__idx">02</span>
+                        <h3>Rasa</h3>
+                        <p>Everyday 18K, made to layer</p>
+                        <span class="coll__link">See 31 pieces</span>
+                    </div>
+                </article>
+
+                <article class="coll reveal" data-delay="180" data-cursor="View">
+                    <div class="coll__media" data-parallax="0.1">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1000&q=85" alt="Emerald jewellery" data-img>
+                    </div>
+                    <div class="coll__body">
+                        <span class="coll__idx">03</span>
+                        <h3>Nazar</h3>
+                        <p>Uncut emeralds &amp; Basra pearls</p>
+                        <span class="coll__link">See 12 pieces</span>
+                    </div>
+                </article>
+
+                <article class="coll coll--wide reveal" data-delay="120" data-cursor="View">
+                    <div class="coll__media" data-parallax="0.05">
+                        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1400&q=85" alt="Diamond ring on hand" data-img>
+                    </div>
+                    <div class="coll__body">
+                        <span class="coll__idx">04</span>
+                        <h3>Archive 1974</h3>
+                        <p>Re-issues from the founding ledgers — nine of each, ever</p>
+                        <span class="coll__link">See the archive</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ PIECES / SHOP ============ -->
+        <section class="section shop" id="pieces">
+            <header class="sec-head sec-head--row">
+                <div>
+                    <p class="eyebrow reveal">02 — The Signature Edit</p>
+                    <h2 class="sec-title reveal">Pieces in <em>stock</em></h2>
+                </div>
+                <div class="filters reveal" id="filters">
+                    <button class="filter is-active" data-filter="all">All</button>
+                    <button class="filter" data-filter="rings">Rings</button>
+                    <button class="filter" data-filter="necklaces">Necklaces</button>
+                    <button class="filter" data-filter="earrings">Earrings</button>
+                    <button class="filter" data-filter="bangles">Bangles</button>
+                </div>
+            </header>
+
+            <div class="product-grid" id="productGrid"></div>
+
+            <div class="shop__foot reveal">
+                <span class="rule"></span>
+                <p>Every piece ships in a hand-turned sheesham box with its own certificate and the setter's initials.</p>
+                <span class="rule"></span>
+            </div>
+        </section>
+
+        <!-- ============ ATELIER ============ -->
+        <section class="section atelier" id="atelier">
+            <div class="atelier__sticky">
+                <p class="eyebrow reveal">03 — The Atelier</p>
+                <h2 class="sec-title reveal">Nineteen days,<br><em>four hands.</em></h2>
+                <p class="sec-note reveal">Machines are quicker. They are not better. Our karigars have been with the
+                    house an average of twenty-two years — the youngest is Meher's own apprentice.</p>
+                <div class="atelier__marks reveal">
+                    <span>BIS 916</span><span>IGI Certified</span><span>Conflict-free</span>
+                </div>
+            </div>
+
+            <ol class="steps">
+                <li class="step reveal">
+                    <span class="step__no">i</span>
+                    <div class="step__media" data-parallax="0.07">
+                        <img src="https://images.unsplash.com/photo-1509941943102-10c232535736?w=1000&q=85" alt="Sketching the design" data-img>
+                    </div>
+                    <div class="step__txt">
+                        <h4>The drawing</h4>
+                        <p>Graphite on gridded vellum. No CAD until the client has held the paper.</p>
+                    </div>
+                </li>
+                <li class="step reveal">
+                    <span class="step__no">ii</span>
+                    <div class="step__media" data-parallax="0.09">
+                        <img src="https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?w=1000&q=85" alt="Molten gold casting" data-img>
+                    </div>
+                    <div class="step__txt">
+                        <h4>The pour</h4>
+                        <p>22K alloyed in-house, cast in a lost-wax mould that is broken after one use.</p>
+                    </div>
+                </li>
+                <li class="step reveal">
+                    <span class="step__no">iii</span>
+                    <div class="step__media" data-parallax="0.06">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1000&q=85" alt="Stone setting" data-img>
+                    </div>
+                    <div class="step__txt">
+                        <h4>The setting</h4>
+                        <p>Every stone seated by hand under a loupe. A bridal set takes eleven days here alone.</p>
+                    </div>
+                </li>
+                <li class="step reveal">
+                    <span class="step__no">iv</span>
+                    <div class="step__media" data-parallax="0.1">
+                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1000&q=85" alt="Final polish" data-img>
+                    </div>
+                    <div class="step__txt">
+                        <h4>The signature</h4>
+                        <p>Polished, weighed, hallmarked, and struck with the setter's initials inside the band.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ============ QUOTE / EDITORIAL BREAK ============ -->
+        <section class="editorial" data-parallax-bg>
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1800&q=85" alt="Jewellery detail" class="editorial__bg" data-img>
+            <blockquote class="editorial__quote reveal">
+                <p>“I wore my grandmother's Meher choker to my own wedding. The clasp still clicks the way it did in
+                    1981.”</p>
+                <cite>Ananya R. · Client since birth, technically</cite>
+            </blockquote>
+        </section>
+
+        <!-- ============ BESPOKE ============ -->
+        <section class="section bespoke" id="bespoke">
+            <div class="bespoke__text">
+                <p class="eyebrow reveal">04 — Bespoke</p>
+                <h2 class="sec-title reveal">Bring us <em>the idea.</em><br>Or the old gold.</h2>
+                <p class="sec-note reveal">We remake heirlooms as often as we make them. Bring a piece that no longer
+                    gets worn and we'll draw three ways to bring it back — no charge, no obligation.</p>
+                <ul class="bespoke__list reveal">
+                    <li><span>01</span> A one-hour consultation, in store or over video</li>
+                    <li><span>02</span> Three hand drawings within nine days</li>
+                    <li><span>03</span> Wax model for approval before a gram is cast</li>
+                    <li><span>04</span> Six to eleven weeks to your hands</li>
+                </ul>
+            </div>
+
+            <form class="form reveal" id="bespokeForm" novalidate>
+                <div class="form__row">
+                    <div class="field">
+                        <input type="text" id="bName" required placeholder=" ">
+                        <label for="bName">Your name</label>
+                    </div>
+                    <div class="field">
+                        <input type="tel" id="bPhone" required placeholder=" ">
+                        <label for="bPhone">Phone</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <input type="email" id="bEmail" required placeholder=" ">
+                    <label for="bEmail">Email</label>
+                </div>
+                <div class="form__row">
+                    <div class="field">
+                        <select id="bType">
+                            <option>Bridal set</option>
+                            <option>Engagement ring</option>
+                            <option>Remake an heirloom</option>
+                            <option>Gift · under ₹1,00,000</option>
+                            <option>Something else entirely</option>
+                        </select>
+                        <label for="bType" class="label--static">Occasion</label>
+                    </div>
+                    <div class="field">
+                        <input type="date" id="bDate">
+                        <label for="bDate" class="label--static">Preferred date</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <textarea id="bNote" rows="3" placeholder=" "></textarea>
+                    <label for="bNote">Tell us about the piece</label>
+                </div>
+                <button type="submit" class="btn btn--gold btn--full" data-magnet>Request the consultation</button>
+                <p class="form__fine">A member of the house replies within one working day. We never share your details.</p>
+            </form>
+        </section>
+
+        <!-- ============ JOURNAL ============ -->
+        <section class="section journal" id="journal">
+            <header class="sec-head">
+                <p class="eyebrow reveal">05 — The Journal</p>
+                <h2 class="sec-title reveal">Notes from <em>the bench</em></h2>
+            </header>
+            <div class="journal__grid">
+                <a href="#journal" class="post reveal" data-cursor="Read">
+                    <div class="post__media"><img src="https://images.unsplash.com/photo-1620656798579-1984d9e87df7?w=900&q=85" alt="Polki close-up" data-img></div>
+                    <span class="post__meta">Craft · 6 min</span>
+                    <h3>Why polki refuses to die</h3>
+                </a>
+                <a href="#journal" class="post reveal" data-delay="90" data-cursor="Read">
+                    <div class="post__media"><img src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=900&q=85" alt="Gold bangles" data-img></div>
+                    <span class="post__meta">Guide · 4 min</span>
+                    <h3>Reading a hallmark in ten seconds</h3>
+                </a>
+                <a href="#journal" class="post reveal" data-delay="180" data-cursor="Read">
+                    <div class="post__media"><img src="https://images.unsplash.com/photo-1588444650733-d0767b753fc8?w=900&q=85" alt="Pearl strand" data-img></div>
+                    <span class="post__meta">Archive · 8 min</span>
+                    <h3>The 1974 ledger, page by page</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============ VISIT ============ -->
+        <section class="section visit" id="visit">
+            <div class="visit__head">
+                <p class="eyebrow reveal">06 — Visit</p>
+                <h2 class="sec-title reveal">Three rooms.<br><em>One appointment.</em></h2>
+            </div>
+            <div class="stores">
+                <article class="store reveal">
+                    <h4>Jaipur · The Atelier</h4>
+                    <p>Haldiyon ka Rasta, Johari Bazaar<br>Jaipur 302003</p>
+                    <span class="store__hrs">Mon–Sat · 11:00–19:30</span>
+                    <a href="#bespoke" data-scroll class="store__link">Book a viewing</a>
+                </article>
+                <article class="store reveal" data-delay="90">
+                    <h4>Mumbai · Kala Ghoda</h4>
+                    <p>Ropewalk Lane, Fort<br>Mumbai 400001</p>
+                    <span class="store__hrs">Tue–Sun · 11:00–20:00</span>
+                    <a href="#bespoke" data-scroll class="store__link">Book a viewing</a>
+                </article>
+                <article class="store reveal" data-delay="180">
+                    <h4>Delhi · Sunder Nagar</h4>
+                    <p>Market Lane 2<br>New Delhi 110003</p>
+                    <span class="store__hrs">By appointment only</span>
+                    <a href="#bespoke" data-scroll class="store__link">Book a viewing</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__news">
+                <h3>Letters from the house</h3>
+                <p>New drawings, archive re-issues, and the occasional invitation. Twice a month, never more.</p>
+                <form class="news" id="newsForm">
+                    <input type="email" id="newsEmail" placeholder="your@email.com" aria-label="Email" required>
+                    <button type="submit" data-magnet>Join</button>
+                </form>
+            </div>
+            <div class="footer__cols">
+                <div>
+                    <h5>Shop</h5>
+                    <a href="#pieces" data-scroll>Rings</a>
+                    <a href="#pieces" data-scroll>Necklaces</a>
+                    <a href="#pieces" data-scroll>Earrings</a>
+                    <a href="#pieces" data-scroll>Bangles</a>
+                </div>
+                <div>
+                    <h5>House</h5>
+                    <a href="#atelier" data-scroll>The Atelier</a>
+                    <a href="#bespoke" data-scroll>Bespoke</a>
+                    <a href="#journal" data-scroll>Journal</a>
+                    <a href="#visit" data-scroll>Stores</a>
+                </div>
+                <div>
+                    <h5>Care</h5>
+                    <a href="#visit" data-scroll>Lifetime exchange</a>
+                    <a href="#visit" data-scroll>Cleaning &amp; re-polish</a>
+                    <a href="#visit" data-scroll>Shipping &amp; returns</a>
+                    <a href="#visit" data-scroll>Certification</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__mark" aria-hidden="true">MEHER</div>
+
+        <div class="footer__base">
+            <span>© 1974–2026 Meher Jewellery House</span>
+            <span>A demo experience by <a href="https://nexspiresolutions.co.in" target="_blank" rel="noopener">Nexspire Solutions</a></span>
+            <span>Jaipur · Mumbai · Delhi</span>
+        </div>
+    </footer>
+
+    <!-- ============ CART DRAWER ============ -->
+    <div class="drawer-scrim" id="drawerScrim"></div>
+    <aside class="drawer" id="drawer" aria-label="Shopping bag">
+        <header class="drawer__head">
+            <h3>Your bag</h3>
+            <button id="drawerClose" aria-label="Close">Close</button>
+        </header>
+        <div class="drawer__body" id="drawerBody"></div>
+        <footer class="drawer__foot">
+            <div class="drawer__row"><span>Subtotal</span><b id="cartTotal">₹0</b></div>
+            <p class="drawer__note">Duties, insured shipping and the sheesham box are on the house.</p>
+            <button class="btn btn--gold btn--full" id="checkoutBtn">Proceed to checkout</button>
+        </footer>
+    </aside>
+
+    <!-- ============ QUICK VIEW ============ -->
+    <div class="qv" id="qv">
+        <div class="qv__scrim" data-qv-close></div>
+        <div class="qv__panel" role="dialog" aria-modal="true">
+            <button class="qv__close" data-qv-close aria-label="Close">✕</button>
+            <div class="qv__media"><img id="qvImg" src="" alt="" data-img></div>
+            <div class="qv__body">
+                <span class="eyebrow" id="qvCat"></span>
+                <h3 id="qvName"></h3>
+                <p class="qv__price" id="qvPrice"></p>
+                <p class="qv__desc" id="qvDesc"></p>
+                <ul class="qv__specs" id="qvSpecs"></ul>
+                <button class="btn btn--gold btn--full" id="qvAdd">Add to bag</button>
+                <p class="form__fine">Ready to ship in 3–5 days · Free resizing for life</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ TOAST ============ -->
+    <div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+    <script src="script.js"></script>
+    <script src="../popup.js"></script>
+</body>
+
+</html>
